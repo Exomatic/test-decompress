@@ -1,0 +1,8 @@
+; w69f25d46f7d64c2cad400a2cb9712d17s
+; 4 instruction(s)
+; starts at code address 0x141790
+---
+0x141794: break                           
+0x141798: break                           
+0x14179c: load.pri 0x1c7c8                 ; 116680
+0x1417a4: retn                            

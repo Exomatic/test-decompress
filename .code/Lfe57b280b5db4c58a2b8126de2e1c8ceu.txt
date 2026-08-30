@@ -1,0 +1,12 @@
+; Lfe57b280b5db4c58a2b8126de2e1c8ceu
+; 8 instruction(s)
+; starts at code address 0x1825ec
+---
+0x1825f0: break                           
+0x1825f4: break                           
+0x1825f8: const.pri 0x56334                ; 353076
+0x182600: move.alt                        
+0x182604: const.pri 0xffffffff             ; -1
+0x18260c: stor.i                          
+0x182610: zero.pri                        
+0x182614: retn                            

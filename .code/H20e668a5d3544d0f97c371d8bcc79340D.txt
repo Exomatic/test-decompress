@@ -1,0 +1,8 @@
+; H20e668a5d3544d0f97c371d8bcc79340D
+; 4 instruction(s)
+; starts at code address 0x32fa7c
+---
+0x32fa80: break                           
+0x32fa84: break                           
+0x32fa88: load.pri 0x1c6b4                 ; 116404
+0x32fa90: retn                            

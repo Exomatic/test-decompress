@@ -1,0 +1,8 @@
+; taf08710762e0492485eee15f50ec299cS
+; 4 instruction(s)
+; starts at code address 0x151ddc
+---
+0x151de0: break                           
+0x151de4: break                           
+0x151de8: load.pri 0x1c704                 ; 116484
+0x151df0: retn                            

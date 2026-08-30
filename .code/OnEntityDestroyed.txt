@@ -1,0 +1,43 @@
+; OnEntityDestroyed
+; 39 instruction(s)
+; starts at code address 0x153ad4
+---
+0x153ad8: break                           
+0x153adc: break                           
+0x153ae0: load.s.pri 0xc                   ; 12
+0x153ae8: push.pri                        
+0x153aec: push.c 0x0                       ; 0
+0x153af4: call 0x345d64                    ; (unknown)
+0x153afc: pop.alt                         
+0x153b00: xchg                            
+0x153b04: jsleq 0x153b4c                   ; +0x48
+0x153b0c: load.s.pri 0xc                   ; 12
+0x153b14: push.pri                        
+0x153b18: push2.c 0xb 0x1                  ; 11 1
+0x153b24: call 0x332290                    ; (unknown)
+0x153b2c: pop.alt                         
+0x153b30: xchg                            
+0x153b34: jsgeq 0x153b4c                   ; +0x18
+0x153b3c: const.pri 0x1                    ; 1
+0x153b44: jump 0x153b50                    ; +0xc
+0x153b4c: zero.pri                        
+0x153b50: jzer 0x153bb8                    ; +0x68
+0x153b58: break                           
+0x153b5c: const.alt 0x49b3c                ; 301884
+0x153b64: load.s.pri 0xc                   ; 12
+0x153b6c: bounds 0x7ff                     ; 2047
+0x153b74: idxaddr                         
+0x153b78: move.alt                        
+0x153b7c: zero.pri                        
+0x153b80: stor.i                          
+0x153b84: break                           
+0x153b88: const.pri 0x42b90                ; 273296
+0x153b90: load.i                          
+0x153b94: const.alt 0xffffffff             ; -1
+0x153b9c: jsleq 0x153bb8                   ; +0x1c
+0x153ba4: break                           
+0x153ba8: const.pri 0x42b90                ; 273296
+0x153bb0: dec.i                           
+0x153bb4: load.i                          
+0x153bb8: zero.pri                        
+0x153bbc: retn                            

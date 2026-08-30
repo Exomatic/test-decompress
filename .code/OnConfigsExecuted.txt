@@ -1,0 +1,565 @@
+; OnConfigsExecuted
+; 561 instruction(s)
+; starts at code address 0xc97c
+---
+0xc980: break                           
+0xc984: break                           
+0xc988: const.pri 0x1cd2c                ; 118060
+0xc990: add.c 0x10                       ; 16
+0xc998: move.alt                        
+0xc99c: load.i                          
+0xc9a0: add                             
+0xc9a4: push.pri                        
+0xc9a8: push.c 0x1                       ; 1
+0xc9b0: call 0x17b74                     ; (unknown)
+0xc9b8: push.pri                        
+0xc9bc: push.c 0x1                       ; 1
+0xc9c4: call 0x14ae74                    ; (unknown)
+0xc9cc: eq.c.pri 0xffffffff              ; -1
+0xc9d4: jump 0xc9f4                      ; +0x20
+0xc9dc: break                           
+0xc9e0: push2.c 0x0 0x1                  ; 0 1
+0xc9ec: call 0xb1fc                      ; (unknown)
+0xc9f4: break                           
+0xc9f8: push.c 0x0                       ; 0
+0xca00: call 0x4ae4                      ; (unknown)
+0xca08: not                             
+0xca0c: jump 0xca34                      ; +0x28
+0xca14: break                           
+0xca18: push2.c 0xe 0x1                  ; 14 1
+0xca24: call 0xb1fc                      ; (unknown)
+0xca2c: jump 0xcaf8                      ; +0xcc
+0xca34: break                           
+0xca38: push.c 0x0                       ; 0
+0xca40: break                           
+0xca44: const.pri 0x1d644                ; 120388
+0xca4c: move.alt                        
+0xca50: load.i                          
+0xca54: add                             
+0xca58: move.alt                        
+0xca5c: const.pri 0x5b448                ; 373832
+0xca64: movs 0x14                        ; 20
+0xca6c: break                           
+0xca70: stack 0xfffffffc                 ; -4
+0xca78: const.pri 0x1d644                ; 120388
+0xca80: move.alt                        
+0xca84: load.i                          
+0xca88: add                             
+0xca8c: push.pri                        
+0xca90: push.c 0x1                       ; 1
+0xca98: call 0x338bac                    ; (unknown)
+0xcaa0: stor.s.pri 0xfffffff8            ; -8
+0xcaa8: break                           
+0xcaac: push.s 0xfffffff8                ; -8
+0xcab4: push.c 0x1                       ; 1
+0xcabc: call 0x14ae74                    ; (unknown)
+0xcac4: stor.s.pri 0xfffffffc            ; -4
+0xcacc: break                           
+0xcad0: push.s 0xfffffffc                ; -4
+0xcad8: push.c 0x1                       ; 1
+0xcae0: call 0x363054                    ; (unknown)
+0xcae8: stor.pri 0x249f8                 ; 150008
+0xcaf0: stack 0x8                        ; 8
+0xcaf8: break                           
+0xcafc: const.pri 0x1e508                ; 124168
+0xcb04: add.c 0x4                        ; 4
+0xcb0c: load.i                          
+0xcb10: push.pri                        
+0xcb14: push2.c 0x3 0x2                  ; 3 2
+0xcb20: call 0x34af34                    ; (unknown)
+0xcb28: break                           
+0xcb2c: const.pri 0x1e508                ; 124168
+0xcb34: load.i                          
+0xcb38: stor.pri 0x41594                 ; 267668
+0xcb40: break                           
+0xcb44: const.pri 0x1e508                ; 124168
+0xcb4c: push.pri                        
+0xcb50: const.pri 0x1e508                ; 124168
+0xcb58: add.c 0x24                       ; 36
+0xcb60: load.i                          
+0xcb64: bounds 0x14                      ; 20
+0xcb6c: pop.alt                         
+0xcb70: idxaddr                         
+0xcb74: push.pri                        
+0xcb78: const.pri 0x1d644                ; 120388
+0xcb80: move.alt                        
+0xcb84: load.i                          
+0xcb88: add                             
+0xcb8c: push.pri                        
+0xcb90: push.c 0x1                       ; 1
+0xcb98: call 0x13d8f0                    ; (unknown)
+0xcba0: pop.alt                         
+0xcba4: stor.i                          
+0xcba8: break                           
+0xcbac: stack 0xfffffffc                 ; -4
+0xcbb4: push.c 0x0                       ; 0
+0xcbbc: call 0x345d64                    ; (unknown)
+0xcbc4: stor.s.pri 0xfffffffc            ; -4
+0xcbcc: break                           
+0xcbd0: const.pri 0x42b90                ; 273296
+0xcbd8: add.c 0xc                        ; 12
+0xcbe0: push.pri                        
+0xcbe4: load.s.pri 0xfffffffc            ; -4
+0xcbec: push.pri                        
+0xcbf0: push2.c 0xfffffe62 0x1           ; -414 1
+0xcbfc: call 0x14a550                    ; (unknown)
+0xcc04: const.alt 0x16c5                 ; 5829
+0xcc0c: xor                             
+0xcc10: eq.c.pri 0xffffe8ae              ; -5970
+0xcc18: jzer 0xcc64                      ; +0x4c
+0xcc20: push2.c 0x101d6 0x1              ; 66006 1
+0xcc2c: call 0x3667f4                    ; (unknown)
+0xcc34: add.c 0xffff264b                 ; -55733
+0xcc3c: push.pri                        
+0xcc40: push.c 0x1                       ; 1
+0xcc48: call 0x14a550                    ; (unknown)
+0xcc50: const.alt 0xd3f                  ; 3391
+0xcc58: xor                             
+0xcc5c: jump 0xcc84                      ; +0x28
+0xcc64: push2.c 0x37d7 0x1               ; 14295 1
+0xcc70: call 0x14a550                    ; (unknown)
+0xcc78: const.alt 0x33e                  ; 830
+0xcc80: xor                             
+0xcc84: neg                             
+0xcc88: push.pri                        
+0xcc8c: push.c 0x1                       ; 1
+0xcc94: call 0x3667f4                    ; (unknown)
+0xcc9c: add.c 0x4432                     ; 17458
+0xcca4: neg                             
+0xcca8: push.pri                        
+0xccac: const.pri 0x126ac                ; 75436
+0xccb4: move.alt                        
+0xccb8: load.i                          
+0xccbc: add                             
+0xccc0: load.i                          
+0xccc4: push.pri                        
+0xccc8: const.pri 0x126ac                ; 75436
+0xccd0: add.c 0x4                        ; 4
+0xccd8: move.alt                        
+0xccdc: load.i                          
+0xcce0: add                             
+0xcce4: load.i                          
+0xcce8: pop.alt                         
+0xccec: xor                             
+0xccf0: pop.alt                         
+0xccf4: add                             
+0xccf8: pop.alt                         
+0xccfc: smul                            
+0xcd00: push.pri                        
+0xcd04: const.pri 0x1e508                ; 124168
+0xcd0c: add.c 0x28                       ; 40
+0xcd14: load.i                          
+0xcd18: pop.alt                         
+0xcd1c: sub.alt                         
+0xcd20: pop.alt                         
+0xcd24: stor.i                          
+0xcd28: break                           
+0xcd2c: const.pri 0x42b90                ; 273296
+0xcd34: add.c 0xc                        ; 12
+0xcd3c: load.i                          
+0xcd40: push.pri                        
+0xcd44: const.pri 0x1e508                ; 124168
+0xcd4c: add.c 0x38                       ; 56
+0xcd54: load.i                          
+0xcd58: push.pri                        
+0xcd5c: const.pri 0x1e508                ; 124168
+0xcd64: add.c 0x24                       ; 36
+0xcd6c: load.i                          
+0xcd70: pop.alt                         
+0xcd74: smul                            
+0xcd78: pop.alt                         
+0xcd7c: jsleq 0xcdd8                     ; +0x5c
+0xcd84: break                           
+0xcd88: const.pri 0x42b90                ; 273296
+0xcd90: add.c 0xc                        ; 12
+0xcd98: push.pri                        
+0xcd9c: const.pri 0x1e508                ; 124168
+0xcda4: add.c 0x38                       ; 56
+0xcdac: load.i                          
+0xcdb0: push.pri                        
+0xcdb4: const.pri 0x1e508                ; 124168
+0xcdbc: add.c 0x24                       ; 36
+0xcdc4: load.i                          
+0xcdc8: pop.alt                         
+0xcdcc: smul                            
+0xcdd0: pop.alt                         
+0xcdd4: stor.i                          
+0xcdd8: break                           
+0xcddc: push.c 0x0                       ; 0
+0xcde4: call 0x147698                    ; (unknown)
+0xcdec: break                           
+0xcdf0: const.pri 0x26010                ; 155664
+0xcdf8: add.c 0x8                        ; 8
+0xce00: push.pri                        
+0xce04: load.pri 0x1cd28                 ; 118056
+0xce0c: push.pri                        
+0xce10: const.pri 0x1e55c                ; 124252
+0xce18: add.c 0x30                       ; 48
+0xce20: load.i                          
+0xce24: pop.alt                         
+0xce28: push.pri                        
+0xce2c: push.alt                        
+0xce30: sysreq.n 6 0x2                   ; FloatMul 2
+0xce3c: push.pri                        
+0xce40: push.c 0x1                       ; 1
+0xce48: call 0x185884                    ; (unknown)
+0xce50: pop.alt                         
+0xce54: stor.i                          
+0xce58: break                           
+0xce5c: const.pri 0x47714                ; 292628
+0xce64: move.alt                        
+0xce68: load.i                          
+0xce6c: add                             
+0xce70: push.pri                        
+0xce74: load.pri 0x1cd28                 ; 118056
+0xce7c: push.pri                        
+0xce80: const.pri 0x1e4d8                ; 124120
+0xce88: add.c 0x14                       ; 20
+0xce90: load.i                          
+0xce94: pop.alt                         
+0xce98: push.pri                        
+0xce9c: push.alt                        
+0xcea0: sysreq.n 6 0x2                   ; FloatMul 2
+0xceac: move.alt                        
+0xceb0: load.pri 0x1e4c0                 ; 124096
+0xceb8: push.pri                        
+0xcebc: push.alt                        
+0xcec0: sysreq.n 6 0x2                   ; FloatMul 2
+0xcecc: pop.alt                         
+0xced0: stor.i                          
+0xced4: break                           
+0xced8: push3.c 0x108f4 0x3b54 0x12      ; 67828 15188 18
+0xcee8: const.pri 0x1e668                ; 124520
+0xcef0: add.c 0x74                       ; 116
+0xcef8: move.alt                        
+0xcefc: load.i                          
+0xcf00: add                             
+0xcf04: push.pri                        
+0xcf08: sysreq.n 37 0x4                  ; FormatEx 4
+0xcf14: break                           
+0xcf18: push2.c 0x0 0x5b45c              ; 0 373852
+0xcf24: const.pri 0x1e668                ; 124520
+0xcf2c: add.c 0x74                       ; 116
+0xcf34: move.alt                        
+0xcf38: load.i                          
+0xcf3c: add                             
+0xcf40: push.pri                        
+0xcf44: push.c 0x3                       ; 3
+0xcf4c: call 0x14abd8                    ; (unknown)
+0xcf54: jzer 0xcfac                      ; +0x58
+0xcf5c: push2.c 0x0 0x17f90              ; 0 98192
+0xcf68: const.pri 0x1e668                ; 124520
+0xcf70: add.c 0x74                       ; 116
+0xcf78: move.alt                        
+0xcf7c: load.i                          
+0xcf80: add                             
+0xcf84: push.pri                        
+0xcf88: push.c 0x3                       ; 3
+0xcf90: call 0x163e8                     ; (unknown)
+0xcf98: jzer 0xcfac                      ; +0x14
+0xcfa0: zero.pri                        
+0xcfa4: jump 0xcfb4                      ; +0x10
+0xcfac: const.pri 0x1                    ; 1
+0xcfb4: jzer 0xcff0                      ; +0x3c
+0xcfbc: break                           
+0xcfc0: const.pri 0x1e668                ; 124520
+0xcfc8: add.c 0x74                       ; 116
+0xcfd0: move.alt                        
+0xcfd4: load.i                          
+0xcfd8: add                             
+0xcfdc: move.alt                        
+0xcfe0: const.pri 0x5b460                ; 373856
+0xcfe8: movs 0x8                         ; 8
+0xcff0: break                           
+0xcff4: push.c 0x0                       ; 0
+0xcffc: break                           
+0xd000: stack 0xfffffffc                 ; -4
+0xd008: const.pri 0x1e968                ; 125288
+0xd010: add.c 0x10                       ; 16
+0xd018: move.alt                        
+0xd01c: load.i                          
+0xd020: add                             
+0xd024: push.pri                        
+0xd028: push.c 0x1                       ; 1
+0xd030: call 0x17b74                     ; (unknown)
+0xd038: stor.s.pri 0xfffffff4            ; -12
+0xd040: break                           
+0xd044: push.s 0xfffffff4                ; -12
+0xd04c: push.c 0x1                       ; 1
+0xd054: call 0x183f74                    ; (unknown)
+0xd05c: stor.s.pri 0xfffffff8            ; -8
+0xd064: break                           
+0xd068: load.s.pri 0xfffffff8            ; -8
+0xd070: const.alt 0x42700000             ; 1114636288
+0xd078: push.pri                        
+0xd07c: push.alt                        
+0xd080: sysreq.n 6 0x2                   ; FloatMul 2
+0xd08c: push.pri                        
+0xd090: push.c 0x1                       ; 1
+0xd098: call 0x333c8c                    ; (unknown)
+0xd0a0: stor.pri 0x42ba0                 ; 273312
+0xd0a8: break                           
+0xd0ac: load.pri 0x42ba0                 ; 273312
+0xd0b4: push.pri                        
+0xd0b8: const.pri 0x1e508                ; 124168
+0xd0c0: load.i                          
+0xd0c4: pop.alt                         
+0xd0c8: jsleq 0xd0f0                     ; +0x28
+0xd0d0: break                           
+0xd0d4: const.pri 0x1e508                ; 124168
+0xd0dc: load.i                          
+0xd0e0: stor.pri 0x42ba0                 ; 273312
+0xd0e8: jump 0xd140                      ; +0x58
+0xd0f0: break                           
+0xd0f4: load.pri 0x42ba0                 ; 273312
+0xd0fc: push.pri                        
+0xd100: const.pri 0x1e508                ; 124168
+0xd108: add.c 0x38                       ; 56
+0xd110: load.i                          
+0xd114: pop.alt                         
+0xd118: jsgeq 0xd140                     ; +0x28
+0xd120: break                           
+0xd124: const.pri 0x1e508                ; 124168
+0xd12c: add.c 0x38                       ; 56
+0xd134: load.i                          
+0xd138: stor.pri 0x42ba0                 ; 273312
+0xd140: break                           
+0xd144: push.c 0x0                       ; 0
+0xd14c: break                           
+0xd150: push.c 0x0                       ; 0
+0xd158: break                           
+0xd15c: push2.c 0x1 0x1                  ; 1 1
+0xd168: call 0xdac8                      ; (unknown)
+0xd170: break                           
+0xd174: load.pri 0x4158c                 ; 267660
+0xd17c: stor.pri 0x41590                 ; 267664
+0xd184: break                           
+0xd188: const.pri 0x1cd2c                ; 118060
+0xd190: add.c 0x20                       ; 32
+0xd198: move.alt                        
+0xd19c: load.i                          
+0xd1a0: add                             
+0xd1a4: push.pri                        
+0xd1a8: push.c 0x1                       ; 1
+0xd1b0: call 0x17b74                     ; (unknown)
+0xd1b8: stor.s.pri 0xffffffec            ; -20
+0xd1c0: break                           
+0xd1c4: const.pri 0x1cbcc                ; 117708
+0xd1cc: push.pri                        
+0xd1d0: push.s 0xffffffec                ; -20
+0xd1d8: push.c 0x1                       ; 1
+0xd1e0: call 0x14ae74                    ; (unknown)
+0xd1e8: pop.alt                         
+0xd1ec: stor.i                          
+0xd1f0: break                           
+0xd1f4: stack 0xfffffffc                 ; -4
+0xd1fc: const.pri 0x1cd2c                ; 118060
+0xd204: add.c 0x24                       ; 36
+0xd20c: move.alt                        
+0xd210: load.i                          
+0xd214: add                             
+0xd218: push.pri                        
+0xd21c: push.c 0x1                       ; 1
+0xd224: call 0x17b74                     ; (unknown)
+0xd22c: stor.s.pri 0xffffffe8            ; -24
+0xd234: break                           
+0xd238: const.pri 0x1cbcc                ; 117708
+0xd240: add.c 0x4                        ; 4
+0xd248: push.pri                        
+0xd24c: push.s 0xffffffe8                ; -24
+0xd254: push.c 0x1                       ; 1
+0xd25c: call 0x14ae74                    ; (unknown)
+0xd264: pop.alt                         
+0xd268: stor.i                          
+0xd26c: break                           
+0xd270: const.pri 0x1cd2c                ; 118060
+0xd278: add.c 0x18                       ; 24
+0xd280: move.alt                        
+0xd284: load.i                          
+0xd288: add                             
+0xd28c: push.pri                        
+0xd290: push.c 0x1                       ; 1
+0xd298: call 0x17b74                     ; (unknown)
+0xd2a0: stor.s.pri 0xfffffff0            ; -16
+0xd2a8: break                           
+0xd2ac: push.s 0xfffffff0                ; -16
+0xd2b4: push.c 0x1                       ; 1
+0xd2bc: call 0x14ae74                    ; (unknown)
+0xd2c4: stor.pri 0x41254                 ; 266836
+0xd2cc: break                           
+0xd2d0: stack 0xfffffffc                 ; -4
+0xd2d8: const.pri 0x1cd2c                ; 118060
+0xd2e0: add.c 0x14                       ; 20
+0xd2e8: move.alt                        
+0xd2ec: load.i                          
+0xd2f0: add                             
+0xd2f4: push.pri                        
+0xd2f8: push.c 0x1                       ; 1
+0xd300: call 0x17b74                     ; (unknown)
+0xd308: stor.s.pri 0xffffffe4            ; -28
+0xd310: break                           
+0xd314: stack 0xfffffffc                 ; -4
+0xd31c: push.s 0xffffffe4                ; -28
+0xd324: push.c 0x1                       ; 1
+0xd32c: call 0x14ae74                    ; (unknown)
+0xd334: stor.s.pri 0xffffffe0            ; -32
+0xd33c: break                           
+0xd340: push.s 0xffffffe0                ; -32
+0xd348: push.c 0x1                       ; 1
+0xd350: call 0x332290                    ; (unknown)
+0xd358: stor.pri 0x473f8                 ; 291832
+0xd360: break                           
+0xd364: push4.c 0x5 0x3e8 0x0 0x3        ; 5 1000 0 3
+0xd378: call 0x92b4                      ; (unknown)
+0xd380: break                           
+0xd384: push2.c 0x0 0x1                  ; 0 1
+0xd390: call 0x13ac30                    ; (unknown)
+0xd398: break                           
+0xd39c: push.c 0x0                       ; 0
+0xd3a4: call 0x14c974                    ; (unknown)
+0xd3ac: break                           
+0xd3b0: load.pri 0x1fa64                 ; 129636
+0xd3b8: push.pri                        
+0xd3bc: push2.c 0xc260dc3 0x1            ; 203820483 1
+0xd3c8: call 0x14a550                    ; (unknown)
+0xd3d0: add.c 0x13131                    ; 78129
+0xd3d8: neg                             
+0xd3dc: push.pri                        
+0xd3e0: push.c 0x1                       ; 1
+0xd3e8: call 0x3667f4                    ; (unknown)
+0xd3f0: const.alt 0xffffac6e             ; -21394
+0xd3f8: xor                             
+0xd3fc: neg                             
+0xd400: push.pri                        
+0xd404: push.c 0x1                       ; 1
+0xd40c: call 0x334eb4                    ; (unknown)
+0xd414: move.alt                        
+0xd418: const.pri 0xfffefb87             ; -66681
+0xd420: sdiv.alt                        
+0xd424: neg                             
+0xd428: push.pri                        
+0xd42c: const.pri 0x49fc                 ; 18940
+0xd434: move.alt                        
+0xd438: load.i                          
+0xd43c: add                             
+0xd440: load.i                          
+0xd444: push.pri                        
+0xd448: const.pri 0x49fc                 ; 18940
+0xd450: add.c 0x4                        ; 4
+0xd458: move.alt                        
+0xd45c: load.i                          
+0xd460: add                             
+0xd464: load.i                          
+0xd468: pop.alt                         
+0xd46c: xor                             
+0xd470: pop.alt                         
+0xd474: add                             
+0xd478: pop.alt                         
+0xd47c: jneq 0xd4b4                      ; +0x38
+0xd484: push.c 0x0                       ; 0
+0xd48c: call 0x345d64                    ; (unknown)
+0xd494: const.alt 0x1e                   ; 30
+0xd49c: jsgrtr 0xd4b4                    ; +0x18
+0xd4a4: const.pri 0x1                    ; 1
+0xd4ac: jump 0xd4b8                      ; +0xc
+0xd4b4: zero.pri                        
+0xd4b8: jzer 0xd5d8                      ; +0x120
+0xd4c0: break                           
+0xd4c4: push2.c 0xfffff957 0x1           ; -1705 1
+0xd4d0: call 0x3667f4                    ; (unknown)
+0xd4d8: const.alt 0x257e                 ; 9598
+0xd4e0: xor                             
+0xd4e4: eq.c.pri 0xffffdc29              ; -9175
+0xd4ec: jzer 0xd51c                      ; +0x30
+0xd4f4: push2.c 0x1807 0x1               ; 6151 1
+0xd500: call 0x334eb4                    ; (unknown)
+0xd508: const.alt 0xd508                 ; 54536
+0xd510: xor                             
+0xd514: jump 0xd55c                      ; +0x48
+0xd51c: push2.c 0x176bf 0x1              ; 95935 1
+0xd528: call 0x14a550                    ; (unknown)
+0xd530: add.c 0xfffe99fa                 ; -91654
+0xd538: neg                             
+0xd53c: push.pri                        
+0xd540: push.c 0x1                       ; 1
+0xd548: call 0x2eea1c                    ; (unknown)
+0xd550: const.alt 0xedd                  ; 3805
+0xd558: xor                             
+0xd55c: neg                             
+0xd560: push.pri                        
+0xd564: push.c 0x1                       ; 1
+0xd56c: call 0x2eea1c                    ; (unknown)
+0xd574: add.c 0xef34                     ; 61236
+0xd57c: neg                             
+0xd580: push.pri                        
+0xd584: const.pri 0x1708c                ; 94348
+0xd58c: move.alt                        
+0xd590: load.i                          
+0xd594: add                             
+0xd598: load.i                          
+0xd59c: push.pri                        
+0xd5a0: const.pri 0x1708c                ; 94348
+0xd5a8: add.c 0x4                        ; 4
+0xd5b0: move.alt                        
+0xd5b4: load.i                          
+0xd5b8: add                             
+0xd5bc: load.i                          
+0xd5c0: pop.alt                         
+0xd5c4: xor                             
+0xd5c8: pop.alt                         
+0xd5cc: add                             
+0xd5d0: stor.pri 0x1fa64                 ; 129636
+0xd5d8: break                           
+0xd5dc: const.pri 0x1ca70                ; 117360
+0xd5e4: load.i                          
+0xd5e8: push.pri                        
+0xd5ec: push2.c 0xfffffc4e 0x1           ; -946 1
+0xd5f8: call 0x3667f4                    ; (unknown)
+0xd600: push.pri                        
+0xd604: push2.c 0xffffe636 0x1           ; -6602 1
+0xd610: call 0x334eb4                    ; (unknown)
+0xd618: const.alt 0x7d0                  ; 2000
+0xd620: xor                             
+0xd624: eq.c.pri 0xffffe1e6              ; -7706
+0xd62c: jzer 0xd65c                      ; +0x30
+0xd634: push2.c 0x10a91 0x1              ; 68241 1
+0xd640: call 0x2eea1c                    ; (unknown)
+0xd648: const.alt 0x15b9d                ; 88989
+0xd650: xor                             
+0xd654: jump 0xd67c                      ; +0x28
+0xd65c: push2.c 0xffffe0be 0x1           ; -8002 1
+0xd668: call 0x334eb4                    ; (unknown)
+0xd670: const.alt 0x1547                 ; 5447
+0xd678: xor                             
+0xd67c: pop.alt                         
+0xd680: add                             
+0xd684: push.pri                        
+0xd688: push.c 0x1                       ; 1
+0xd690: call 0x334eb4                    ; (unknown)
+0xd698: add.c 0xffffceee                 ; -12562
+0xd6a0: neg                             
+0xd6a4: push.pri                        
+0xd6a8: const.pri 0x14a18                ; 84504
+0xd6b0: move.alt                        
+0xd6b4: load.i                          
+0xd6b8: add                             
+0xd6bc: load.i                          
+0xd6c0: push.pri                        
+0xd6c4: const.pri 0x14a18                ; 84504
+0xd6cc: add.c 0x4                        ; 4
+0xd6d4: move.alt                        
+0xd6d8: load.i                          
+0xd6dc: add                             
+0xd6e0: load.i                          
+0xd6e4: pop.alt                         
+0xd6e8: xor                             
+0xd6ec: pop.alt                         
+0xd6f0: add                             
+0xd6f4: pop.alt                         
+0xd6f8: jneq 0xd714                      ; +0x1c
+0xd700: break                           
+0xd704: push.c 0x0                       ; 0
+0xd70c: call 0x14be24                    ; (unknown)
+0xd714: stack 0x20                       ; 32
+0xd71c: zero.pri                        
+0xd720: retn                            

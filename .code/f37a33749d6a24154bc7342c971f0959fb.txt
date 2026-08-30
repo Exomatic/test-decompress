@@ -1,0 +1,38 @@
+; f37a33749d6a24154bc7342c971f0959fb
+; 34 instruction(s)
+; starts at code address 0x361ac8
+---
+0x361acc: break                           
+0x361ad0: break                           
+0x361ad4: push.c 0x0                       ; 0
+0x361adc: call 0x14c974                    ; (unknown)
+0x361ae4: break                           
+0x361ae8: const.pri 0x1                    ; 1
+0x361af0: load.s.alt 0x10                  ; 16
+0x361af8: sleq                            
+0x361afc: push.pri                        
+0x361b00: push.alt                        
+0x361b04: push.c 0x0                       ; 0
+0x361b0c: call 0x345d64                    ; (unknown)
+0x361b14: pop.alt                         
+0x361b18: sgeq                            
+0x361b1c: pop.alt                         
+0x361b20: and                             
+0x361b24: jzer 0x361b68                    ; +0x44
+0x361b2c: const.alt 0x24e50                ; 151120
+0x361b34: load.s.pri 0x10                  ; 16
+0x361b3c: bounds 0x41                      ; 65
+0x361b44: lidx                            
+0x361b48: const.alt 0xffffffff             ; -1
+0x361b50: jsleq 0x361b68                   ; +0x18
+0x361b58: const.pri 0x1                    ; 1
+0x361b60: jump 0x361b6c                    ; +0xc
+0x361b68: zero.pri                        
+0x361b6c: jzer 0x361b90                    ; +0x24
+0x361b74: break                           
+0x361b78: push.s 0x10                      ; 16
+0x361b80: push.c 0x1                       ; 1
+0x361b88: call 0x13b1dc                    ; (unknown)
+0x361b90: break                           
+0x361b94: const.pri 0x4                    ; 4
+0x361b9c: retn                            

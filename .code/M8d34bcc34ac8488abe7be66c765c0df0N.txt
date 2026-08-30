@@ -1,0 +1,8 @@
+; M8d34bcc34ac8488abe7be66c765c0df0N
+; 4 instruction(s)
+; starts at code address 0x2d50
+---
+0x2d54: break                           
+0x2d58: break                           
+0x2d5c: load.pri 0x1c71c                 ; 116508
+0x2d64: retn                            

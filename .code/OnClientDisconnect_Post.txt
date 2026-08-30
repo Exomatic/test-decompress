@@ -1,0 +1,11 @@
+; OnClientDisconnect_Post
+; 7 instruction(s)
+; starts at code address 0x37db64
+---
+0x37db68: break                           
+0x37db6c: break                           
+0x37db70: push.s 0xc                       ; 12
+0x37db78: push.c 0x1                       ; 1
+0x37db80: call 0x358c78                    ; (unknown)
+0x37db88: zero.pri                        
+0x37db8c: retn                            

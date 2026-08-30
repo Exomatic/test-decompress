@@ -1,0 +1,95 @@
+; N7bd75c1308ae4f30813a9d1ca7e14f73R
+; 91 instruction(s)
+; starts at code address 0x3489fc
+---
+0x348a00: break                           
+0x348a04: break                           
+0x348a08: push.c 0x0                       ; 0
+0x348a10: break                           
+0x348a14: stack 0xfffffffc                 ; -4
+0x348a1c: break                           
+0x348a20: const.pri 0x1ca74                ; 117364
+0x348a28: add.c 0x10                       ; 16
+0x348a30: move.alt                        
+0x348a34: load.i                          
+0x348a38: add                             
+0x348a3c: push.pri                        
+0x348a40: push.s 0xc                       ; 12
+0x348a48: push.c 0x2                       ; 2
+0x348a50: call 0x36ffe0                    ; (unknown)
+0x348a58: stor.s.pri 0xfffffffc            ; -4
+0x348a60: break                           
+0x348a64: push.s 0xfffffffc                ; -4
+0x348a6c: push.c 0x1                       ; 1
+0x348a74: call 0x9380                      ; (unknown)
+0x348a7c: stor.s.pri 0xfffffff8            ; -8
+0x348a84: break                           
+0x348a88: const.pri 0x249fc                ; 150012
+0x348a90: add.c 0x18                       ; 24
+0x348a98: load.i                          
+0x348a9c: move.alt                        
+0x348aa0: zero.pri                        
+0x348aa4: xchg                            
+0x348aa8: sgrtr                           
+0x348aac: jnz 0x348adc                     ; +0x30
+0x348ab4: const.pri 0x24a28                ; 150056
+0x348abc: add.c 0x40                       ; 64
+0x348ac4: load.i                          
+0x348ac8: jnz 0x348adc                     ; +0x14
+0x348ad0: zero.pri                        
+0x348ad4: jump 0x348ae4                    ; +0x10
+0x348adc: const.pri 0x1                    ; 1
+0x348ae4: jzer 0x348c00                    ; +0x11c
+0x348aec: break                           
+0x348af0: const.alt 0x24e50                ; 151120
+0x348af8: load.s.pri 0xfffffff8            ; -8
+0x348b00: bounds 0x41                      ; 65
+0x348b08: lidx                            
+0x348b0c: const.alt 0x1                    ; 1
+0x348b14: jsleq 0x348bc0                   ; +0xac
+0x348b1c: break                           
+0x348b20: const.alt 0x1d848                ; 120904
+0x348b28: load.s.pri 0xfffffff8            ; -8
+0x348b30: bounds 0x41                      ; 65
+0x348b38: idxaddr                         
+0x348b3c: move.alt                        
+0x348b40: load.i                          
+0x348b44: add                             
+0x348b48: add.c 0x10                       ; 16
+0x348b50: push.pri                        
+0x348b54: push2.c 0x0 0x4                  ; 0 4
+0x348b60: const.pri 0x1ca74                ; 117364
+0x348b68: add.c 0x3c                       ; 60
+0x348b70: move.alt                        
+0x348b74: load.i                          
+0x348b78: add                             
+0x348b7c: push.pri                        
+0x348b80: const.pri 0x1e508                ; 124168
+0x348b88: add.c 0x28                       ; 40
+0x348b90: load.i                          
+0x348b94: push.pri                        
+0x348b98: push.s 0xfffffff8                ; -8
+0x348ba0: push.c 0x5                       ; 5
+0x348ba8: call 0x35aee8                    ; (unknown)
+0x348bb0: pop.alt                         
+0x348bb4: stor.i                          
+0x348bb8: jump 0x348c00                    ; +0x48
+0x348bc0: break                           
+0x348bc4: const.alt 0x1d848                ; 120904
+0x348bcc: load.s.pri 0xfffffff8            ; -8
+0x348bd4: bounds 0x41                      ; 65
+0x348bdc: idxaddr                         
+0x348be0: move.alt                        
+0x348be4: load.i                          
+0x348be8: add                             
+0x348bec: add.c 0x10                       ; 16
+0x348bf4: move.alt                        
+0x348bf8: zero.pri                        
+0x348bfc: stor.i                          
+0x348c00: break                           
+0x348c04: push.s 0xfffffff8                ; -8
+0x348c0c: push2.c 0x10 0x2                 ; 16 2
+0x348c18: call 0x34af34                    ; (unknown)
+0x348c20: stack 0x8                        ; 8
+0x348c28: zero.pri                        
+0x348c2c: retn                            

@@ -1,0 +1,23 @@
+; ceb1fd4df4f8b43a28050ffea8a647d31R
+; 19 instruction(s)
+; starts at code address 0x15230
+---
+0x15234: break                           
+0x15238: break                           
+0x1523c: const.alt 0x42a6c                ; 273004
+0x15244: load.s.pri 0x10                  ; 16
+0x1524c: bounds 0x41                      ; 65
+0x15254: lidx                            
+0x15258: jzer 0x15284                     ; +0x2c
+0x15260: load.s.both 0x10 0xc             ; 16 12
+0x1526c: jeq 0x15284                      ; +0x18
+0x15274: const.pri 0x1                    ; 1
+0x1527c: jump 0x15288                     ; +0xc
+0x15284: zero.pri                        
+0x15288: jzer 0x152a0                     ; +0x18
+0x15290: break                           
+0x15294: const.pri 0x3                    ; 3
+0x1529c: retn                            
+0x152a0: break                           
+0x152a4: zero.pri                        
+0x152a8: retn                            

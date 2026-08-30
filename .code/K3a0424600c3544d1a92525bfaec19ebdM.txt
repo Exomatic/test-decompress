@@ -1,0 +1,8 @@
+; K3a0424600c3544d1a92525bfaec19ebdM
+; 4 instruction(s)
+; starts at code address 0x37db90
+---
+0x37db94: break                           
+0x37db98: break                           
+0x37db9c: load.pri 0x1c7b0                 ; 116656
+0x37dba4: retn                            

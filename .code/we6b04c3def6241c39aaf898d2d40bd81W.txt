@@ -1,0 +1,47 @@
+; we6b04c3def6241c39aaf898d2d40bd81W
+; 43 instruction(s)
+; starts at code address 0x13f56c
+---
+0x13f570: break                           
+0x13f574: break                           
+0x13f578: stack 0xfffffffc                 ; -4
+0x13f580: break                           
+0x13f584: const.s 0xfffffffc 0x1           ; -4 1
+0x13f590: jump 0x13f5a4                    ; +0x14
+0x13f598: break                           
+0x13f59c: inc.s 0xfffffffc                 ; -4
+0x13f5a4: load.s.pri 0xfffffffc            ; -4
+0x13f5ac: push.pri                        
+0x13f5b0: push.c 0x0                       ; 0
+0x13f5b8: call 0x345d64                    ; (unknown)
+0x13f5c0: pop.alt                         
+0x13f5c4: jsless 0x13f634                  ; +0x70
+0x13f5cc: break                           
+0x13f5d0: const.pri 0x47a2c                ; 293420
+0x13f5d8: move.alt                        
+0x13f5dc: load.i                          
+0x13f5e0: add                             
+0x13f5e4: push.pri                        
+0x13f5e8: load.s.pri 0xfffffffc            ; -4
+0x13f5f0: bounds 0x41                      ; 65
+0x13f5f8: pop.alt                         
+0x13f5fc: idxaddr                         
+0x13f600: load.i                          
+0x13f604: move.alt                        
+0x13f608: zero.pri                        
+0x13f60c: jsgeq 0x13f62c                   ; +0x20
+0x13f614: break                           
+0x13f618: const.pri 0x4                    ; 4
+0x13f620: stack 0x4                        ; 4
+0x13f628: retn                            
+0x13f62c: jump 0x13f598                    ; -0x94
+0x13f634: break                           
+0x13f638: load.pri 0x42a68                 ; 273000
+0x13f640: jzer 0x13f65c                    ; +0x1c
+0x13f648: break                           
+0x13f64c: push.c 0x0                       ; 0
+0x13f654: call 0xb99c                      ; (unknown)
+0x13f65c: break                           
+0x13f660: const.pri 0x4                    ; 4
+0x13f668: stack 0x4                        ; 4
+0x13f670: retn                            

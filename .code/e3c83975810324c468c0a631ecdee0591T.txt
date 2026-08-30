@@ -1,0 +1,57 @@
+; e3c83975810324c468c0a631ecdee0591T
+; 53 instruction(s)
+; starts at code address 0x376a44
+---
+0x376a48: break                           
+0x376a4c: break                           
+0x376a50: push.c 0x0                       ; 0
+0x376a58: push.s 0x10                      ; 16
+0x376a60: push.c 0x2                       ; 2
+0x376a68: call 0x18276c                    ; (unknown)
+0x376a70: break                           
+0x376a74: stack 0xfffffffc                 ; -4
+0x376a7c: break                           
+0x376a80: push.s 0x10                      ; 16
+0x376a88: push.c 0x1                       ; 1
+0x376a90: call 0x35c5e0                    ; (unknown)
+0x376a98: stor.s.pri 0xfffffffc            ; -4
+0x376aa0: break                           
+0x376aa4: const.alt 0x24e50                ; 151120
+0x376aac: load.s.pri 0xfffffffc            ; -4
+0x376ab4: bounds 0x41                      ; 65
+0x376abc: lidx                            
+0x376ac0: const.alt 0xffffffff             ; -1
+0x376ac8: jsleq 0x376b04                   ; +0x3c
+0x376ad0: push.s 0xfffffffc                ; -4
+0x376ad8: push.c 0x1                       ; 1
+0x376ae0: call 0x13c9a8                    ; (unknown)
+0x376ae8: not                             
+0x376aec: jzer 0x376b04                    ; +0x18
+0x376af4: const.pri 0x1                    ; 1
+0x376afc: jump 0x376b08                    ; +0xc
+0x376b04: zero.pri                        
+0x376b08: jzer 0x376ba8                    ; +0xa0
+0x376b10: break                           
+0x376b14: push.c 0x0                       ; 0
+0x376b1c: break                           
+0x376b20: stack 0xffffff00                 ; -256
+0x376b28: break                           
+0x376b2c: push2.c 0x8 0x1                  ; 8 1
+0x376b38: call 0x332290                    ; (unknown)
+0x376b40: stor.s.pri 0xfffffff8            ; -8
+0x376b48: break                           
+0x376b4c: push.s 0xfffffff8                ; -8
+0x376b54: push.adr 0xfffffef8              ; -264
+0x376b5c: push.s 0x10                      ; 16
+0x376b64: push.c 0x3                       ; 3
+0x376b6c: call 0x37d4a8                    ; (unknown)
+0x376b74: break                           
+0x376b78: push2.adr 0xfffffef8 0xfffffffc  ; -264 -4
+0x376b84: push.c 0x11ea4                   ; 73380
+0x376b8c: push.s 0xfffffffc                ; -4
+0x376b94: sysreq.n 193 0x4                 ; KickClient 4
+0x376ba0: stack 0x104                      ; 260
+0x376ba8: break                           
+0x376bac: const.pri 0x4                    ; 4
+0x376bb4: stack 0x4                        ; 4
+0x376bbc: retn                            

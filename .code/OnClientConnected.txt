@@ -1,0 +1,61 @@
+; OnClientConnected
+; 57 instruction(s)
+; starts at code address 0x3807b0
+---
+0x3807b4: break                           
+0x3807b8: break                           
+0x3807bc: const.pri 0x1e508                ; 124168
+0x3807c4: add.c 0x28                       ; 40
+0x3807cc: load.i                          
+0x3807d0: push.pri                        
+0x3807d4: push.s 0xc                       ; 12
+0x3807dc: push.c 0x2                       ; 2
+0x3807e4: call 0x353324                    ; (unknown)
+0x3807ec: break                           
+0x3807f0: push.c 0x0                       ; 0
+0x3807f8: call 0x14c974                    ; (unknown)
+0x380800: break                           
+0x380804: const.alt 0x48bbc                ; 297916
+0x38080c: load.s.pri 0xc                   ; 12
+0x380814: bounds 0x41                      ; 65
+0x38081c: idxaddr                         
+0x380820: move.alt                        
+0x380824: load.i                          
+0x380828: add                             
+0x38082c: move.alt                        
+0x380830: const.pri 0xffffffff             ; -1
+0x380838: stor.i                          
+0x38083c: break                           
+0x380840: const.alt 0x48bbc                ; 297916
+0x380848: load.s.pri 0xc                   ; 12
+0x380850: bounds 0x41                      ; 65
+0x380858: idxaddr                         
+0x38085c: move.alt                        
+0x380860: load.i                          
+0x380864: add                             
+0x380868: add.c 0x4                        ; 4
+0x380870: move.alt                        
+0x380874: const.pri 0xffffffff             ; -1
+0x38087c: stor.i                          
+0x380880: break                           
+0x380884: const.alt 0x48bbc                ; 297916
+0x38088c: load.s.pri 0xc                   ; 12
+0x380894: bounds 0x41                      ; 65
+0x38089c: idxaddr                         
+0x3808a0: move.alt                        
+0x3808a4: load.i                          
+0x3808a8: add                             
+0x3808ac: add.c 0x8                        ; 8
+0x3808b4: move.alt                        
+0x3808b8: const.pri 0xffffffff             ; -1
+0x3808c0: stor.i                          
+0x3808c4: break                           
+0x3808c8: push.s 0xc                       ; 12
+0x3808d0: push.c 0x1                       ; 1
+0x3808d8: call 0x358c78                    ; (unknown)
+0x3808e0: break                           
+0x3808e4: push.s 0xc                       ; 12
+0x3808ec: push2.c 0xd 0x2                  ; 13 2
+0x3808f8: call 0x34af34                    ; (unknown)
+0x380900: zero.pri                        
+0x380904: retn                            

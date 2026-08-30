@@ -1,0 +1,57 @@
+; OnEntityCreated
+; 53 instruction(s)
+; starts at code address 0x37abb0
+---
+0x37abb4: break                           
+0x37abb8: break                           
+0x37abbc: load.s.pri 0xc                   ; 12
+0x37abc4: push.pri                        
+0x37abc8: push.c 0x0                       ; 0
+0x37abd0: call 0x345d64                    ; (unknown)
+0x37abd8: pop.alt                         
+0x37abdc: xchg                            
+0x37abe0: jsleq 0x37ac28                   ; +0x48
+0x37abe8: load.s.pri 0xc                   ; 12
+0x37abf0: push.pri                        
+0x37abf4: push2.c 0xb 0x1                  ; 11 1
+0x37ac00: call 0x332290                    ; (unknown)
+0x37ac08: pop.alt                         
+0x37ac0c: xchg                            
+0x37ac10: jsgeq 0x37ac28                   ; +0x18
+0x37ac18: const.pri 0x1                    ; 1
+0x37ac20: jump 0x37ac2c                    ; +0xc
+0x37ac28: zero.pri                        
+0x37ac2c: jzer 0x37ad20                    ; +0xf4
+0x37ac34: break                           
+0x37ac38: const.alt 0x49b3c                ; 301884
+0x37ac40: load.s.pri 0xc                   ; 12
+0x37ac48: bounds 0x7ff                     ; 2047
+0x37ac50: idxaddr                         
+0x37ac54: move.alt                        
+0x37ac58: zero.pri                        
+0x37ac5c: stor.i                          
+0x37ac60: break                           
+0x37ac64: load.pri 0x42b8c                 ; 273292
+0x37ac6c: switch 0x37acfc                  ; 3648764
+0x37ac74: break                           
+0x37ac78: push.s 0xc                       ; 12
+0x37ac80: push.c 0x1                       ; 1
+0x37ac88: call 0x10bf0                     ; (unknown)
+0x37ac90: jump 0x37ad20                    ; +0x90
+0x37ac98: break                           
+0x37ac9c: push.s 0xc                       ; 12
+0x37aca4: push.c 0x1                       ; 1
+0x37acac: call 0x14a2dc                    ; (unknown)
+0x37acb4: jump 0x37ad20                    ; +0x6c
+0x37acbc: break                           
+0x37acc0: push.s 0xc                       ; 12
+0x37acc8: push.c 0x1                       ; 1
+0x37acd0: call 0x10bf0                     ; (unknown)
+0x37acd8: break                           
+0x37acdc: push.s 0xc                       ; 12
+0x37ace4: push.c 0x1                       ; 1
+0x37acec: call 0x14a2dc                    ; (unknown)
+0x37acf4: jump 0x37ad20                    ; +0x2c
+0x37acfc: casetbl 0x3                      ; 3
+0x37ad20: zero.pri                        
+0x37ad24: retn                            

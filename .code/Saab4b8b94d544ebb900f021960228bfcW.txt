@@ -1,0 +1,8 @@
+; Saab4b8b94d544ebb900f021960228bfcW
+; 4 instruction(s)
+; starts at code address 0x149068
+---
+0x14906c: break                           
+0x149070: break                           
+0x149074: load.pri 0x1c718                 ; 116504
+0x14907c: retn                            

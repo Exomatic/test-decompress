@@ -1,0 +1,24 @@
+; v4edde8e896534439a93d6c565efc4e09C
+; 20 instruction(s)
+; starts at code address 0x365550
+---
+0x365554: break                           
+0x365558: break                           
+0x36555c: const.alt 0x24e50                ; 151120
+0x365564: load.s.pri 0x10                  ; 16
+0x36556c: bounds 0x41                      ; 65
+0x365574: lidx                            
+0x365578: move.alt                        
+0x36557c: zero.pri                        
+0x365580: jsgeq 0x3655c0                   ; +0x40
+0x365588: break                           
+0x36558c: push.s 0x10                      ; 16
+0x365594: push.c 0x1                       ; 1
+0x36559c: call 0x180078                    ; (unknown)
+0x3655a4: break                           
+0x3655a8: push.s 0x10                      ; 16
+0x3655b0: push.c 0x1                       ; 1
+0x3655b8: call 0x34d54c                    ; (unknown)
+0x3655c0: break                           
+0x3655c4: const.pri 0x4                    ; 4
+0x3655cc: retn                            

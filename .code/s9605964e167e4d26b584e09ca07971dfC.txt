@@ -1,0 +1,20 @@
+; s9605964e167e4d26b584e09ca07971dfC
+; 16 instruction(s)
+; starts at code address 0x339338
+---
+0x33933c: break                           
+0x339340: break                           
+0x339344: const.pri 0x1e508                ; 124168
+0x33934c: add.c 0x8                        ; 8
+0x339354: load.i                          
+0x339358: push.pri                        
+0x33935c: push2.c 0x4 0x2                  ; 4 2
+0x339368: call 0x34af34                    ; (unknown)
+0x339370: break                           
+0x339374: const.pri 0x42ccc                ; 273612
+0x33937c: add.c 0x4                        ; 4
+0x339384: move.alt                        
+0x339388: zero.pri                        
+0x33938c: stor.i                          
+0x339390: zero.pri                        
+0x339394: retn                            

@@ -1,0 +1,110 @@
+; we3de683ee6c541d48e8bde8e4d67b5d5S
+; 106 instruction(s)
+; starts at code address 0x145ea8
+---
+0x145eac: break                           
+0x145eb0: break                           
+0x145eb4: const.pri 0x1                    ; 1
+0x145ebc: load.s.alt 0x10                  ; 16
+0x145ec4: sleq                            
+0x145ec8: push.pri                        
+0x145ecc: push.alt                        
+0x145ed0: push.c 0x0                       ; 0
+0x145ed8: call 0x345d64                    ; (unknown)
+0x145ee0: pop.alt                         
+0x145ee4: sgeq                            
+0x145ee8: pop.alt                         
+0x145eec: and                             
+0x145ef0: jzer 0x145f38                    ; +0x48
+0x145ef8: const.alt 0x24e50                ; 151120
+0x145f00: load.s.pri 0x10                  ; 16
+0x145f08: bounds 0x41                      ; 65
+0x145f10: lidx                            
+0x145f14: move.alt                        
+0x145f18: zero.pri                        
+0x145f1c: xchg                            
+0x145f20: jsleq 0x145f38                   ; +0x18
+0x145f28: const.pri 0x1                    ; 1
+0x145f30: jump 0x145f3c                    ; +0xc
+0x145f38: zero.pri                        
+0x145f3c: jzer 0x146148                    ; +0x20c
+0x145f44: break                           
+0x145f48: const.pri 0x1ca70                ; 117360
+0x145f50: load.i                          
+0x145f54: switch 0x146124                  ; 1335588
+0x145f5c: break                           
+0x145f60: push4.c 0x0 0x4 0xc 0x1          ; 0 4 12 1
+0x145f74: call 0x332290                    ; (unknown)
+0x145f7c: push.pri                        
+0x145f80: const.pri 0x1f1c0                ; 127424
+0x145f88: add.c 0x8                        ; 8
+0x145f90: move.alt                        
+0x145f94: load.i                          
+0x145f98: add                             
+0x145f9c: push.pri                        
+0x145fa0: const.pri 0x1e508                ; 124168
+0x145fa8: add.c 0x28                       ; 40
+0x145fb0: load.i                          
+0x145fb4: push.pri                        
+0x145fb8: push.s 0x10                      ; 16
+0x145fc0: sysreq.n 25 0x6                  ; SetEntProp 6
+0x145fcc: jump 0x146148                    ; +0x17c
+0x145fd4: break                           
+0x145fd8: push.c 0x0                       ; 0
+0x145fe0: const.pri 0x1e55c                ; 124252
+0x145fe8: add.c 0xc                        ; 12
+0x145ff0: load.i                          
+0x145ff4: push.pri                        
+0x145ff8: const.pri 0x1e4d8                ; 124120
+0x146000: add.c 0x4                        ; 4
+0x146008: load.i                          
+0x14600c: pop.alt                         
+0x146010: push.pri                        
+0x146014: push.alt                        
+0x146018: sysreq.n 6 0x2                   ; FloatMul 2
+0x146024: push.pri                        
+0x146028: const.pri 0x1e668                ; 124520
+0x146030: add.c 0x58                       ; 88
+0x146038: move.alt                        
+0x14603c: load.i                          
+0x146040: add                             
+0x146044: push.pri                        
+0x146048: const.pri 0x1e508                ; 124168
+0x146050: add.c 0x28                       ; 40
+0x146058: load.i                          
+0x14605c: push.pri                        
+0x146060: push.s 0x10                      ; 16
+0x146068: push.c 0x5                       ; 5
+0x146070: call 0x1826e8                    ; (unknown)
+0x146078: break                           
+0x14607c: push.c 0x0                       ; 0
+0x146084: const.pri 0x1e55c                ; 124252
+0x14608c: add.c 0x10                       ; 16
+0x146094: load.i                          
+0x146098: push.pri                        
+0x14609c: const.pri 0x1e55c                ; 124252
+0x1460a4: add.c 0x3c                       ; 60
+0x1460ac: load.i                          
+0x1460b0: pop.alt                         
+0x1460b4: push.pri                        
+0x1460b8: push.alt                        
+0x1460bc: sysreq.n 10 0x2                  ; FloatSub 2
+0x1460c8: push.pri                        
+0x1460cc: const.pri 0x1e668                ; 124520
+0x1460d4: add.c 0x54                       ; 84
+0x1460dc: move.alt                        
+0x1460e0: load.i                          
+0x1460e4: add                             
+0x1460e8: push.pri                        
+0x1460ec: const.pri 0x1e508                ; 124168
+0x1460f4: add.c 0x28                       ; 40
+0x1460fc: load.i                          
+0x146100: push.pri                        
+0x146104: push.s 0x10                      ; 16
+0x14610c: push.c 0x5                       ; 5
+0x146114: call 0x355ac0                    ; (unknown)
+0x14611c: jump 0x146148                    ; +0x2c
+0x146124: casetbl 0x3                      ; 3
+0x146148: break                           
+0x14614c: const.pri 0x4                    ; 4
+0x146154: retn                            

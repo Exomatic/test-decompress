@@ -1,0 +1,55 @@
+; J97529e4c29854887879fe014abb01a32X
+; 51 instruction(s)
+; starts at code address 0x35c628
+---
+0x35c62c: break                           
+0x35c630: break                           
+0x35c634: stack 0xfffffffc                 ; -4
+0x35c63c: break                           
+0x35c640: stack 0xfffffffc                 ; -4
+0x35c648: const.pri 0x1ca74                ; 117364
+0x35c650: add.c 0x10                       ; 16
+0x35c658: move.alt                        
+0x35c65c: load.i                          
+0x35c660: add                             
+0x35c664: push.pri                        
+0x35c668: push.s 0xc                       ; 12
+0x35c670: push.c 0x2                       ; 2
+0x35c678: call 0x36ffe0                    ; (unknown)
+0x35c680: stor.s.pri 0xfffffff8            ; -8
+0x35c688: break                           
+0x35c68c: push.s 0xfffffff8                ; -8
+0x35c694: push.c 0x1                       ; 1
+0x35c69c: call 0x14a52c                    ; (unknown)
+0x35c6a4: stor.s.pri 0xfffffffc            ; -4
+0x35c6ac: break                           
+0x35c6b0: const.alt 0x24e50                ; 151120
+0x35c6b8: load.s.pri 0xfffffffc            ; -4
+0x35c6c0: bounds 0x41                      ; 65
+0x35c6c8: lidx                            
+0x35c6cc: const.alt 0xffffffff             ; -1
+0x35c6d4: jsleq 0x35c728                   ; +0x54
+0x35c6dc: const.pri 0x25078                ; 151672
+0x35c6e4: move.alt                        
+0x35c6e8: load.i                          
+0x35c6ec: add                             
+0x35c6f0: push.pri                        
+0x35c6f4: load.s.pri 0xfffffffc            ; -4
+0x35c6fc: bounds 0x41                      ; 65
+0x35c704: pop.alt                         
+0x35c708: idxaddr                         
+0x35c70c: load.i                          
+0x35c710: jzer 0x35c728                    ; +0x18
+0x35c718: const.pri 0x1                    ; 1
+0x35c720: jump 0x35c72c                    ; +0xc
+0x35c728: zero.pri                        
+0x35c72c: jzer 0x35c750                    ; +0x24
+0x35c734: break                           
+0x35c738: load.s.pri 0xfffffffc            ; -4
+0x35c740: stor.pri 0x1fa74                 ; 129652
+0x35c748: jump 0x35c760                    ; +0x18
+0x35c750: break                           
+0x35c754: const 0x1fa74 0xffffffff         ; 129652 -1
+0x35c760: stack 0x8                        ; 8
+0x35c768: zero.pri                        
+0x35c76c: retn                            

@@ -1,0 +1,131 @@
+; Ic75885193c1c4eaeb091ba414c01d62eb
+; 127 instruction(s)
+; starts at code address 0x37ae18
+---
+0x37ae1c: break                           
+0x37ae20: break                           
+0x37ae24: push.c 0x0                       ; 0
+0x37ae2c: call 0x14c974                    ; (unknown)
+0x37ae34: break                           
+0x37ae38: const.pri 0x1                    ; 1
+0x37ae40: load.s.alt 0xc                   ; 12
+0x37ae48: sleq                            
+0x37ae4c: push.pri                        
+0x37ae50: push.alt                        
+0x37ae54: push.c 0x0                       ; 0
+0x37ae5c: call 0x345d64                    ; (unknown)
+0x37ae64: pop.alt                         
+0x37ae68: xchg                            
+0x37ae6c: sleq                            
+0x37ae70: swap.alt                        
+0x37ae74: and                             
+0x37ae78: pop.alt                         
+0x37ae7c: not                             
+0x37ae80: jnz 0x37aec4                     ; +0x44
+0x37ae88: const.alt 0x24e50                ; 151120
+0x37ae90: load.s.pri 0xc                   ; 12
+0x37ae98: bounds 0x41                      ; 65
+0x37aea0: lidx                            
+0x37aea4: const.alt 0x1                    ; 1
+0x37aeac: sless                           
+0x37aeb0: jnz 0x37aec4                     ; +0x14
+0x37aeb8: zero.pri                        
+0x37aebc: jump 0x37aecc                    ; +0x10
+0x37aec4: const.pri 0x1                    ; 1
+0x37aecc: jzer 0x37aee0                    ; +0x14
+0x37aed4: break                           
+0x37aed8: zero.pri                        
+0x37aedc: retn                            
+0x37aee0: break                           
+0x37aee4: stack 0xfffffffc                 ; -4
+0x37aeec: break                           
+0x37aef0: push.s 0xc                       ; 12
+0x37aef8: push.c 0x1                       ; 1
+0x37af00: call 0x35b7d4                    ; (unknown)
+0x37af08: stor.s.pri 0xfffffffc            ; -4
+0x37af10: break                           
+0x37af14: load.s.pri 0xfffffffc            ; -4
+0x37af1c: const.alt 0x1                    ; 1
+0x37af24: jsleq 0x37af64                   ; +0x40
+0x37af2c: push.s 0xfffffffc                ; -4
+0x37af34: push.c 0x1                       ; 1
+0x37af3c: call 0x36683c                    ; (unknown)
+0x37af44: const.alt 0x1                    ; 1
+0x37af4c: jsleq 0x37af64                   ; +0x18
+0x37af54: const.pri 0x1                    ; 1
+0x37af5c: jump 0x37af68                    ; +0xc
+0x37af64: zero.pri                        
+0x37af68: jzer 0x37b130                    ; +0x1c8
+0x37af70: break                           
+0x37af74: stack 0xffffffc0                 ; -64
+0x37af7c: break                           
+0x37af80: push2.c 0x0 0x40                 ; 0 64
+0x37af8c: push.adr 0xffffffbc              ; -68
+0x37af94: push.s 0xc                       ; 12
+0x37af9c: push.c 0x4                       ; 4
+0x37afa4: call 0x34a01c                    ; (unknown)
+0x37afac: jzer 0x37b020                    ; +0x74
+0x37afb4: const.pri 0x240b0                ; 147632
+0x37afbc: push.pri                        
+0x37afc0: const.pri 0x1e508                ; 124168
+0x37afc8: add.c 0x28                       ; 40
+0x37afd0: load.i                          
+0x37afd4: bounds 0x41                      ; 65
+0x37afdc: pop.alt                         
+0x37afe0: idxaddr                         
+0x37afe4: push.pri                        
+0x37afe8: push.adr 0xffffffbc              ; -68
+0x37aff0: push 0x56440                     ; 353344
+0x37aff8: push.c 0x3                       ; 3
+0x37b000: call 0x13884c                    ; (unknown)
+0x37b008: jzer 0x37b020                    ; +0x18
+0x37b010: const.pri 0x1                    ; 1
+0x37b018: jump 0x37b024                    ; +0xc
+0x37b020: zero.pri                        
+0x37b024: jzer 0x37b128                    ; +0x104
+0x37b02c: break                           
+0x37b030: push.c 0x40                      ; 64
+0x37b038: push.adr 0xffffffbc              ; -68
+0x37b040: push.c 0x2                       ; 2
+0x37b048: call 0x331880                    ; (unknown)
+0x37b050: break                           
+0x37b054: const.alt 0x240b0                ; 147632
+0x37b05c: load.s.pri 0xc                   ; 12
+0x37b064: bounds 0x41                      ; 65
+0x37b06c: idxaddr                         
+0x37b070: push.pri                        
+0x37b074: push.adr 0xffffffbc              ; -68
+0x37b07c: push.c 0x1                       ; 1
+0x37b084: call 0x13d8f0                    ; (unknown)
+0x37b08c: pop.alt                         
+0x37b090: stor.i                          
+0x37b094: move.alt                        
+0x37b098: zero.pri                        
+0x37b09c: jsleq 0x37b0d0                   ; +0x34
+0x37b0a4: break                           
+0x37b0a8: const.alt 0x240b0                ; 147632
+0x37b0b0: load.s.pri 0xc                   ; 12
+0x37b0b8: bounds 0x41                      ; 65
+0x37b0c0: idxaddr                         
+0x37b0c4: move.alt                        
+0x37b0c8: zero.pri                        
+0x37b0cc: stor.i                          
+0x37b0d0: break                           
+0x37b0d4: const.pri 0x1e668                ; 124520
+0x37b0dc: add.c 0x34                       ; 52
+0x37b0e4: move.alt                        
+0x37b0e8: load.i                          
+0x37b0ec: add                             
+0x37b0f0: push.pri                        
+0x37b0f4: push.s 0xc                       ; 12
+0x37b0fc: sysreq.n 222 0x2                 ; FakeClientCommandEx 2
+0x37b108: break                           
+0x37b10c: const.pri 0x3                    ; 3
+0x37b114: stack 0x40                       ; 64
+0x37b11c: stack 0x4                        ; 4
+0x37b124: retn                            
+0x37b128: stack 0x40                       ; 64
+0x37b130: break                           
+0x37b134: zero.pri                        
+0x37b138: stack 0x4                        ; 4
+0x37b140: retn                            

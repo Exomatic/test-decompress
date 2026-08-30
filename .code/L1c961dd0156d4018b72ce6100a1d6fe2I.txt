@@ -1,0 +1,14 @@
+; L1c961dd0156d4018b72ce6100a1d6fe2I
+; 10 instruction(s)
+; starts at code address 0x32fac0
+---
+0x32fac4: break                           
+0x32fac8: break                           
+0x32facc: load.s.both 0x14 0xc             ; 20 12
+0x32fad8: jneq 0x32faec                    ; +0x14
+0x32fae0: break                           
+0x32fae4: zero.pri                        
+0x32fae8: retn                            
+0x32faec: break                           
+0x32faf0: const.pri 0x1                    ; 1
+0x32faf8: retn                            

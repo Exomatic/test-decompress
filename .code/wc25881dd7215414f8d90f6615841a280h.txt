@@ -1,0 +1,8 @@
+; wc25881dd7215414f8d90f6615841a280h
+; 4 instruction(s)
+; starts at code address 0x17f670
+---
+0x17f674: break                           
+0x17f678: break                           
+0x17f67c: load.pri 0x1c6ac                 ; 116396
+0x17f684: retn                            

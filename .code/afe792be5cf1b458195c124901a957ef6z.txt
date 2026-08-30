@@ -1,0 +1,75 @@
+; afe792be5cf1b458195c124901a957ef6z
+; 71 instruction(s)
+; starts at code address 0x32b7f8
+---
+0x32b7fc: break                           
+0x32b800: break                           
+0x32b804: const.pri 0x47a2c                ; 293420
+0x32b80c: move.alt                        
+0x32b810: load.i                          
+0x32b814: add                             
+0x32b818: push.pri                        
+0x32b81c: load.s.pri 0x10                  ; 16
+0x32b824: bounds 0x41                      ; 65
+0x32b82c: pop.alt                         
+0x32b830: idxaddr                         
+0x32b834: load.i                          
+0x32b838: load.alt 0x258c0                 ; 153792
+0x32b840: jsleq 0x32b900                   ; +0xc0
+0x32b848: break                           
+0x32b84c: const.pri 0x1fa68                ; 129640
+0x32b854: load.i                          
+0x32b858: move.alt                        
+0x32b85c: zero.pri                        
+0x32b860: jsgeq 0x32b8d0                   ; +0x70
+0x32b868: break                           
+0x32b86c: const.alt 0x1d740                ; 120640
+0x32b874: load.s.pri 0x10                  ; 16
+0x32b87c: bounds 0x41                      ; 65
+0x32b884: lidx                            
+0x32b888: push.pri                        
+0x32b88c: const.alt 0x1d740                ; 120640
+0x32b894: load.s.pri 0xc                   ; 12
+0x32b89c: bounds 0x41                      ; 65
+0x32b8a4: lidx                            
+0x32b8a8: pop.alt                         
+0x32b8ac: jneq 0x32b8c0                    ; +0x14
+0x32b8b4: break                           
+0x32b8b8: zero.pri                        
+0x32b8bc: retn                            
+0x32b8c0: break                           
+0x32b8c4: const.pri 0x3                    ; 3
+0x32b8cc: retn                            
+0x32b8d0: break                           
+0x32b8d4: load.s.both 0x10 0xc             ; 16 12
+0x32b8e0: jneq 0x32b8f4                    ; +0x14
+0x32b8e8: zero.pri                        
+0x32b8ec: jump 0x32b8fc                    ; +0x10
+0x32b8f4: const.pri 0x3                    ; 3
+0x32b8fc: retn                            
+0x32b900: break                           
+0x32b904: const.pri 0x47a2c                ; 293420
+0x32b90c: move.alt                        
+0x32b910: load.i                          
+0x32b914: add                             
+0x32b918: push.pri                        
+0x32b91c: load.s.pri 0x10                  ; 16
+0x32b924: bounds 0x41                      ; 65
+0x32b92c: pop.alt                         
+0x32b930: idxaddr                         
+0x32b934: load.i                          
+0x32b938: move.alt                        
+0x32b93c: zero.pri                        
+0x32b940: jsgeq 0x32b98c                   ; +0x4c
+0x32b948: break                           
+0x32b94c: push.c 0x0                       ; 0
+0x32b954: push.s 0x10                      ; 16
+0x32b95c: push.c 0x2                       ; 2
+0x32b964: call 0x182fd0                    ; (unknown)
+0x32b96c: break                           
+0x32b970: push.s 0x10                      ; 16
+0x32b978: push2.c 0xa 0x2                  ; 10 2
+0x32b984: call 0x34af34                    ; (unknown)
+0x32b98c: break                           
+0x32b990: zero.pri                        
+0x32b994: retn                            

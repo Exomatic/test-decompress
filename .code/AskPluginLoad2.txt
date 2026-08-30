@@ -1,0 +1,28 @@
+ AskPluginLoad2
+; 24 instruction(s)
+; starts at code address 0x14bd70
+---
+0x14bd74: break                           
+0x14bd78: break                           
+0x14bd7c: push.c 0x0                       ; 0
+0x14bd84: call 0x19ce8                     ; (unknown)
+0x14bd8c: break                           
+0x14bd90: push.c 0x0                       ; 0
+0x14bd98: call 0x2eeb68                    ; (unknown)
+0x14bda0: break                           
+0x14bda4: push.c 0x0                       ; 0
+0x14bdac: call 0x14bfa4                    ; (unknown)
+0x14bdb4: break                           
+0x14bdb8: push.c 0x0                       ; 0
+0x14bdc0: call 0x355430                    ; (unknown)
+0x14bdc8: break                           
+0x14bdcc: const.pri 0x1f1c0                ; 127424
+0x14bdd4: move.alt                        
+0x14bdd8: load.i                          
+0x14bddc: add                             
+0x14bde0: push.pri                        
+0x14bde4: push.c 0x1                       ; 1
+0x14bdec: call 0x14580                     ; (unknown)
+0x14bdf4: break                           
+0x14bdf8: zero.pri                        
+0x14bdfc: retn                            

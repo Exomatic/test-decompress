@@ -1,0 +1,15 @@
+; CS_OnTerminateRound
+; 11 instruction(s)
+; starts at code address 0x13ac90
+---
+0x13ac94: break                           
+0x13ac98: break                           
+0x13ac9c: const.pri 0x1e508                ; 124168
+0x13aca4: add.c 0x8                        ; 8
+0x13acac: load.i                          
+0x13acb0: push.pri                        
+0x13acb4: push2.c 0x4 0x2                  ; 4 2
+0x13acc0: call 0x34af34                    ; (unknown)
+0x13acc8: break                           
+0x13accc: zero.pri                        
+0x13acd0: retn                            

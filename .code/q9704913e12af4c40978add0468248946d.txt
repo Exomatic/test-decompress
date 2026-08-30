@@ -1,0 +1,8 @@
+; q9704913e12af4c40978add0468248946d
+; 4 instruction(s)
+; starts at code address 0x186dc
+---
+0x186e0: break                           
+0x186e4: break                           
+0x186e8: load.pri 0x1c828                 ; 116776
+0x186f0: retn                            

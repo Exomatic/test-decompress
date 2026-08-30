@@ -1,0 +1,128 @@
+; j014e7d84a5fe4d9686fe7102f53e0f26c
+; 124 instruction(s)
+; starts at code address 0x33883c
+---
+0x338840: break                           
+0x338844: break                           
+0x338848: push2.c 0x0 0x1                  ; 0 1
+0x338854: call 0x2eea1c                    ; (unknown)
+0x33885c: const.alt 0x2                    ; 2
+0x338864: sshr                            
+0x338868: push.pri                        
+0x33886c: push.c 0x1                       ; 1
+0x338874: call 0x157488                    ; (unknown)
+0x33887c: push.pri                        
+0x338880: push2.c 0x1c0 0x1                ; 448 1
+0x33888c: call 0x157488                    ; (unknown)
+0x338894: push.pri                        
+0x338898: push2.c 0xffffe7ac 0x1           ; -6228 1
+0x3388a4: call 0x2eea1c                    ; (unknown)
+0x3388ac: const.alt 0xfffff0ef             ; -3857
+0x3388b4: xor                             
+0x3388b8: push.pri                        
+0x3388bc: push2.c 0x1299 0x1               ; 4761 1
+0x3388c8: call 0x2eea1c                    ; (unknown)
+0x3388d0: const.alt 0x909                  ; 2313
+0x3388d8: xor                             
+0x3388dc: push.pri                        
+0x3388e0: push2.c 0xdc80 0x1               ; 56448 1
+0x3388ec: call 0x3667f4                    ; (unknown)
+0x3388f4: const.alt 0x3                    ; 3
+0x3388fc: sshr                            
+0x338900: pop.alt                         
+0x338904: jneq 0x338abc                    ; +0x1b8
+0x33890c: push2.c 0x13fbe 0x1              ; 81854 1
+0x338918: call 0x3667f4                    ; (unknown)
+0x338920: push.pri                        
+0x338924: push2.c 0x187b 0x1               ; 6267 1
+0x338930: call 0x157488                    ; (unknown)
+0x338938: const.alt 0xf78                  ; 3960
+0x338940: xor                             
+0x338944: push.pri                        
+0x338948: push2.c 0xffffe036 0x1           ; -8138 1
+0x338954: call 0x334eb4                    ; (unknown)
+0x33895c: const.alt 0x3a0                  ; 928
+0x338964: xor                             
+0x338968: eq.c.pri 0xffffe396              ; -7274
+0x338970: jzer 0x3389a0                    ; +0x30
+0x338978: push2.c 0x133e3 0x1              ; 78819 1
+0x338984: call 0x157488                    ; (unknown)
+0x33898c: const.alt 0x12b3f                ; 76607
+0x338994: xor                             
+0x338998: jump 0x3389c0                    ; +0x28
+0x3389a0: push2.c 0xfffffcec 0x1           ; -788 1
+0x3389ac: call 0x3667f4                    ; (unknown)
+0x3389b4: const.alt 0xffffdc0a             ; -9206
+0x3389bc: xor                             
+0x3389c0: push.pri                        
+0x3389c4: push.c 0x1                       ; 1
+0x3389cc: call 0x3667f4                    ; (unknown)
+0x3389d4: const.alt 0x2461                 ; 9313
+0x3389dc: xor                             
+0x3389e0: eq.c.pri 0x3cc2                  ; 15554
+0x3389e8: jzer 0x338a18                    ; +0x30
+0x3389f0: push2.c 0xffffc67c 0x1           ; -14724 1
+0x3389fc: call 0x334eb4                    ; (unknown)
+0x338a04: const.alt 0x2634                 ; 9780
+0x338a0c: xor                             
+0x338a10: jump 0x338a38                    ; +0x28
+0x338a18: push2.c 0xfffeba89 0x1           ; -83319 1
+0x338a24: call 0x334eb4                    ; (unknown)
+0x338a2c: const.alt 0xfffead8a             ; -86646
+0x338a34: xor                             
+0x338a38: pop.alt                         
+0x338a3c: jneq 0x338a8c                    ; +0x50
+0x338a44: push2.c 0xffff83a3 0x1           ; -31837 1
+0x338a50: call 0x14a550                    ; (unknown)
+0x338a58: push.pri                        
+0x338a5c: push2.c 0xd5ec 0x1               ; 54764 1
+0x338a68: call 0x2eea1c                    ; (unknown)
+0x338a70: add.c 0x7eba                     ; 32442
+0x338a78: neg                             
+0x338a7c: pop.alt                         
+0x338a80: xor                             
+0x338a84: jump 0x338aac                    ; +0x28
+0x338a8c: push2.c 0x3b3 0x1                ; 947 1
+0x338a98: call 0x14a550                    ; (unknown)
+0x338aa0: const.alt 0xffffdcb6             ; -9034
+0x338aa8: xor                             
+0x338aac: pop.alt                         
+0x338ab0: xor                             
+0x338ab4: jump 0x338adc                    ; +0x28
+0x338abc: push2.c 0x919 0x1                ; 2329 1
+0x338ac8: call 0x334eb4                    ; (unknown)
+0x338ad0: const.alt 0xfffff83a             ; -1990
+0x338ad8: xor                             
+0x338adc: pop.alt                         
+0x338ae0: jneq 0x338b10                    ; +0x30
+0x338ae8: push2.c 0x8cb 0x1                ; 2251 1
+0x338af4: call 0x2eea1c                    ; (unknown)
+0x338afc: const.alt 0x16f8                 ; 5880
+0x338b04: xor                             
+0x338b08: jump 0x338b50                    ; +0x48
+0x338b10: push2.c 0xd91 0x1                ; 3473 1
+0x338b1c: call 0x14a550                    ; (unknown)
+0x338b24: push.pri                        
+0x338b28: push2.c 0x6cb8 0x1               ; 27832 1
+0x338b34: call 0x157488                    ; (unknown)
+0x338b3c: const.alt 0x3                    ; 3
+0x338b44: sshr                            
+0x338b48: pop.alt                         
+0x338b4c: xor                             
+0x338b50: pop.alt                         
+0x338b54: xchg                            
+0x338b58: sshr                            
+0x338b5c: pop.alt                         
+0x338b60: xchg                            
+0x338b64: sshr                            
+0x338b68: push.pri                        
+0x338b6c: push.c 0x1                       ; 1
+0x338b74: call 0x334eb4                    ; (unknown)
+0x338b7c: const.alt 0x3                    ; 3
+0x338b84: sshr                            
+0x338b88: push.pri                        
+0x338b8c: push.c 0x1                       ; 1
+0x338b94: call 0x14a550                    ; (unknown)
+0x338b9c: stor.pri 0x1c760                 ; 116576
+0x338ba4: zero.pri                        
+0x338ba8: retn                            

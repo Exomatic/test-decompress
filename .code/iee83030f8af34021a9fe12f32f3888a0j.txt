@@ -1,0 +1,8 @@
+; iee83030f8af34021a9fe12f32f3888a0j
+; 4 instruction(s)
+; starts at code address 0x35f21c
+---
+0x35f220: break                           
+0x35f224: break                           
+0x35f228: load.pri 0x1c724                 ; 116516
+0x35f230: retn                            

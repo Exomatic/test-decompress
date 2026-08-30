@@ -1,0 +1,8 @@
+; Xd60b74a58fb243b9a4870a6143ab214fe
+; 4 instruction(s)
+; starts at code address 0x153c9c
+---
+0x153ca0: break                           
+0x153ca4: break                           
+0x153ca8: load.pri 0x1c800                 ; 116736
+0x153cb0: retn                            

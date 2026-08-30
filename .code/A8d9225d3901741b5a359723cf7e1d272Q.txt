@@ -1,0 +1,282 @@
+; A8d9225d3901741b5a359723cf7e1d272Q
+; 278 instruction(s)
+; starts at code address 0x341a70
+---
+0x341a74: break                           
+0x341a78: break                           
+0x341a7c: push2.c 0xed51426e 0x1           ; -313441682 1
+0x341a88: call 0x2eea1c                    ; (unknown)
+0x341a90: push.pri                        
+0x341a94: push2.c 0xffffee51 0x1           ; -4527 1
+0x341aa0: call 0x334eb4                    ; (unknown)
+0x341aa8: const.alt 0xffffea08             ; -5624
+0x341ab0: xor                             
+0x341ab4: push.pri                        
+0x341ab8: push2.c 0xfffedef1 0x1           ; -73999 1
+0x341ac4: call 0x334eb4                    ; (unknown)
+0x341acc: push.pri                        
+0x341ad0: push2.c 0x1aac9 0x1              ; 109257 1
+0x341adc: call 0x14a550                    ; (unknown)
+0x341ae4: add.c 0xffff7a9f                 ; -34145
+0x341aec: pop.alt                         
+0x341af0: add                             
+0x341af4: pop.alt                         
+0x341af8: jneq 0x341b28                    ; +0x30
+0x341b00: push2.c 0xec85 0x1               ; 60549 1
+0x341b0c: call 0x334eb4                    ; (unknown)
+0x341b14: const.alt 0x2a70                 ; 10864
+0x341b1c: xor                             
+0x341b20: jump 0x341b6c                    ; +0x4c
+0x341b28: push2.c 0xffffebd5 0x1           ; -5163 1
+0x341b34: call 0x2eea1c                    ; (unknown)
+0x341b3c: push.pri                        
+0x341b40: push2.c 0xccbb 0x1               ; 52411 1
+0x341b4c: call 0x2eea1c                    ; (unknown)
+0x341b54: const.alt 0xdfd4                 ; 57300
+0x341b5c: xor                             
+0x341b60: neg                             
+0x341b64: pop.alt                         
+0x341b68: xor                             
+0x341b6c: neg                             
+0x341b70: pop.alt                         
+0x341b74: sdiv.alt                        
+0x341b78: push.pri                        
+0x341b7c: push.c 0x1                       ; 1
+0x341b84: call 0x14a550                    ; (unknown)
+0x341b8c: push.pri                        
+0x341b90: push2.c 0x2e60 0x1               ; 11872 1
+0x341b9c: call 0x3667f4                    ; (unknown)
+0x341ba4: push.pri                        
+0x341ba8: push2.c 0xffffde9c 0x1           ; -8548 1
+0x341bb4: call 0x334eb4                    ; (unknown)
+0x341bbc: const.alt 0xfffff9f3             ; -1549
+0x341bc4: xor                             
+0x341bc8: eq.c.pri 0x2772                  ; 10098
+0x341bd0: jzer 0x341c00                    ; +0x30
+0x341bd8: push2.c 0xc96 0x1                ; 3222 1
+0x341be4: call 0x334eb4                    ; (unknown)
+0x341bec: const.alt 0x1630                 ; 5680
+0x341bf4: xor                             
+0x341bf8: jump 0x341c20                    ; +0x28
+0x341c00: push2.c 0xda87 0x1               ; 55943 1
+0x341c0c: call 0x334eb4                    ; (unknown)
+0x341c14: const.alt 0xc522                 ; 50466
+0x341c1c: xor                             
+0x341c20: pop.alt                         
+0x341c24: sub.alt                         
+0x341c28: pop.alt                         
+0x341c2c: xor                             
+0x341c30: eq.c.pri 0x16b1                  ; 5809
+0x341c38: jzer 0x341c68                    ; +0x30
+0x341c40: push2.c 0xd427 0x1               ; 54311 1
+0x341c4c: call 0x334eb4                    ; (unknown)
+0x341c54: const.alt 0x6d6c                 ; 28012
+0x341c5c: xor                             
+0x341c60: jump 0x341d04                    ; +0xa4
+0x341c68: push2.c 0xffffeee0 0x1           ; -4384 1
+0x341c74: call 0x334eb4                    ; (unknown)
+0x341c7c: push.pri                        
+0x341c80: push2.c 0x2353 0x1               ; 9043 1
+0x341c8c: call 0x157488                    ; (unknown)
+0x341c94: const.alt 0xffffd96d             ; -9875
+0x341c9c: xor                             
+0x341ca0: eq.c.pri 0xfffffa47              ; -1465
+0x341ca8: jzer 0x341cd8                    ; +0x30
+0x341cb0: push2.c 0xffffcc7f 0x1           ; -13185 1
+0x341cbc: call 0x334eb4                    ; (unknown)
+0x341cc4: const.alt 0x243d                 ; 9277
+0x341ccc: xor                             
+0x341cd0: jump 0x341cf8                    ; +0x28
+0x341cd8: push2.c 0xfffff04d 0x1           ; -4019 1
+0x341ce4: call 0x157488                    ; (unknown)
+0x341cec: const.alt 0xfffff6e5             ; -2331
+0x341cf4: xor                             
+0x341cf8: neg                             
+0x341cfc: pop.alt                         
+0x341d00: xor                             
+0x341d04: push.pri                        
+0x341d08: push.c 0x1                       ; 1
+0x341d10: call 0x157488                    ; (unknown)
+0x341d18: push.pri                        
+0x341d1c: push2.c 0xed51426e 0x1           ; -313441682 1
+0x341d28: call 0x2eea1c                    ; (unknown)
+0x341d30: push.pri                        
+0x341d34: push2.c 0xffffee51 0x1           ; -4527 1
+0x341d40: call 0x14a550                    ; (unknown)
+0x341d48: const.alt 0xffffea08             ; -5624
+0x341d50: xor                             
+0x341d54: push.pri                        
+0x341d58: push2.c 0xfffedef1 0x1           ; -73999 1
+0x341d64: call 0x2eea1c                    ; (unknown)
+0x341d6c: push.pri                        
+0x341d70: push2.c 0x1aac9 0x1              ; 109257 1
+0x341d7c: call 0x3667f4                    ; (unknown)
+0x341d84: add.c 0xffff7a9f                 ; -34145
+0x341d8c: pop.alt                         
+0x341d90: add                             
+0x341d94: pop.alt                         
+0x341d98: jneq 0x341dc8                    ; +0x30
+0x341da0: push2.c 0xec85 0x1               ; 60549 1
+0x341dac: call 0x14a550                    ; (unknown)
+0x341db4: const.alt 0x2a70                 ; 10864
+0x341dbc: xor                             
+0x341dc0: jump 0x341e0c                    ; +0x4c
+0x341dc8: push2.c 0xffffebd5 0x1           ; -5163 1
+0x341dd4: call 0x334eb4                    ; (unknown)
+0x341ddc: push.pri                        
+0x341de0: push2.c 0xccbb 0x1               ; 52411 1
+0x341dec: call 0x3667f4                    ; (unknown)
+0x341df4: const.alt 0xdfd4                 ; 57300
+0x341dfc: xor                             
+0x341e00: neg                             
+0x341e04: pop.alt                         
+0x341e08: xor                             
+0x341e0c: neg                             
+0x341e10: pop.alt                         
+0x341e14: sdiv.alt                        
+0x341e18: push.pri                        
+0x341e1c: push.c 0x1                       ; 1
+0x341e24: call 0x14a550                    ; (unknown)
+0x341e2c: push.pri                        
+0x341e30: push2.c 0x2e60 0x1               ; 11872 1
+0x341e3c: call 0x14a550                    ; (unknown)
+0x341e44: push.pri                        
+0x341e48: push2.c 0xffffde9c 0x1           ; -8548 1
+0x341e54: call 0x334eb4                    ; (unknown)
+0x341e5c: const.alt 0xfffff9f3             ; -1549
+0x341e64: xor                             
+0x341e68: eq.c.pri 0x2772                  ; 10098
+0x341e70: jzer 0x341ea0                    ; +0x30
+0x341e78: push2.c 0xc96 0x1                ; 3222 1
+0x341e84: call 0x334eb4                    ; (unknown)
+0x341e8c: const.alt 0x1630                 ; 5680
+0x341e94: xor                             
+0x341e98: jump 0x341ec0                    ; +0x28
+0x341ea0: push2.c 0xda87 0x1               ; 55943 1
+0x341eac: call 0x157488                    ; (unknown)
+0x341eb4: const.alt 0xc522                 ; 50466
+0x341ebc: xor                             
+0x341ec0: pop.alt                         
+0x341ec4: sub.alt                         
+0x341ec8: pop.alt                         
+0x341ecc: xor                             
+0x341ed0: eq.c.pri 0x16b1                  ; 5809
+0x341ed8: jzer 0x341f08                    ; +0x30
+0x341ee0: push2.c 0xd427 0x1               ; 54311 1
+0x341eec: call 0x157488                    ; (unknown)
+0x341ef4: const.alt 0x6d6c                 ; 28012
+0x341efc: xor                             
+0x341f00: jump 0x341fa4                    ; +0xa4
+0x341f08: push2.c 0xffffeee0 0x1           ; -4384 1
+0x341f14: call 0x2eea1c                    ; (unknown)
+0x341f1c: push.pri                        
+0x341f20: push2.c 0x2353 0x1               ; 9043 1
+0x341f2c: call 0x14a550                    ; (unknown)
+0x341f34: const.alt 0xffffd96d             ; -9875
+0x341f3c: xor                             
+0x341f40: eq.c.pri 0xfffffa47              ; -1465
+0x341f48: jzer 0x341f78                    ; +0x30
+0x341f50: push2.c 0xffffcc7f 0x1           ; -13185 1
+0x341f5c: call 0x3667f4                    ; (unknown)
+0x341f64: const.alt 0x243d                 ; 9277
+0x341f6c: xor                             
+0x341f70: jump 0x341f98                    ; +0x28
+0x341f78: push2.c 0xfffff04d 0x1           ; -4019 1
+0x341f84: call 0x14a550                    ; (unknown)
+0x341f8c: const.alt 0xfffff6e5             ; -2331
+0x341f94: xor                             
+0x341f98: neg                             
+0x341f9c: pop.alt                         
+0x341fa0: xor                             
+0x341fa4: pop.alt                         
+0x341fa8: xor                             
+0x341fac: push.pri                        
+0x341fb0: push.c 0x1                       ; 1
+0x341fb8: call 0x2eea1c                    ; (unknown)
+0x341fc0: jzer 0x34220c                    ; +0x24c
+0x341fc8: break                           
+0x341fcc: push2.c 0x15bd 0x1               ; 5565 1
+0x341fd8: call 0x3667f4                    ; (unknown)
+0x341fe0: push.pri                        
+0x341fe4: push2.c 0xffffda9a 0x1           ; -9574 1
+0x341ff0: call 0x2eea1c                    ; (unknown)
+0x341ff8: push.pri                        
+0x341ffc: push2.c 0x20b 0x1                ; 523 1
+0x342008: call 0x334eb4                    ; (unknown)
+0x342010: const.alt 0xffffdb9b             ; -9317
+0x342018: xor                             
+0x34201c: eq.c.pri 0xffffd990              ; -9840
+0x342024: jzer 0x342054                    ; +0x30
+0x34202c: push2.c 0xfffeae58 0x1           ; -86440 1
+0x342038: call 0x14a550                    ; (unknown)
+0x342040: const.alt 0xfffe8b20             ; -95456
+0x342048: xor                             
+0x34204c: jump 0x342110                    ; +0xc4
+0x342054: push2.c 0xffffe750 0x1           ; -6320 1
+0x342060: call 0x2eea1c                    ; (unknown)
+0x342068: const.alt 0xffffe926             ; -5850
+0x342070: xor                             
+0x342074: eq.c.pri 0xe79                   ; 3705
+0x34207c: jzer 0x3420ac                    ; +0x30
+0x342084: push2.c 0xfffff8c8 0x1           ; -1848 1
+0x342090: call 0x2eea1c                    ; (unknown)
+0x342098: const.alt 0xffffeb22             ; -5342
+0x3420a0: xor                             
+0x3420a4: jump 0x3420cc                    ; +0x28
+0x3420ac: push2.c 0x15c1e 0x1              ; 89118 1
+0x3420b8: call 0x14a550                    ; (unknown)
+0x3420c0: const.alt 0x16667                ; 91751
+0x3420c8: xor                             
+0x3420cc: neg                             
+0x3420d0: push.pri                        
+0x3420d4: push.c 0x1                       ; 1
+0x3420dc: call 0x334eb4                    ; (unknown)
+0x3420e4: push.pri                        
+0x3420e8: push2.c 0x4958 0x1               ; 18776 1
+0x3420f4: call 0x14a550                    ; (unknown)
+0x3420fc: add.c 0xffffdb47                 ; -9401
+0x342104: neg                             
+0x342108: pop.alt                         
+0x34210c: xor                             
+0x342110: neg                             
+0x342114: pop.alt                         
+0x342118: xor                             
+0x34211c: pop.alt                         
+0x342120: xor                             
+0x342124: eq.c.pri 0x15af                  ; 5551
+0x34212c: jzer 0x3421ac                    ; +0x80
+0x342134: push2.c 0x1367e554 0x1           ; 325576020 1
+0x342140: call 0x334eb4                    ; (unknown)
+0x342148: move.alt                        
+0x34214c: const.pri 0xd953                 ; 55635
+0x342154: sdiv.alt                        
+0x342158: neg                             
+0x34215c: push.pri                        
+0x342160: push.c 0x1                       ; 1
+0x342168: call 0x3667f4                    ; (unknown)
+0x342170: push.pri                        
+0x342174: push2.c 0x1367e554 0x1           ; 325576020 1
+0x342180: call 0x3667f4                    ; (unknown)
+0x342188: move.alt                        
+0x34218c: const.pri 0xd953                 ; 55635
+0x342194: sdiv.alt                        
+0x342198: neg                             
+0x34219c: pop.alt                         
+0x3421a0: xor                             
+0x3421a4: jump 0x3421cc                    ; +0x28
+0x3421ac: push2.c 0xfffffcf3 0x1           ; -781 1
+0x3421b8: call 0x334eb4                    ; (unknown)
+0x3421c0: const.alt 0xffffff35             ; -203
+0x3421c8: xor                             
+0x3421cc: push.pri                        
+0x3421d0: push.c 0x1                       ; 1
+0x3421d8: call 0x334eb4                    ; (unknown)
+0x3421e0: move.alt                        
+0x3421e4: const.pri 0xfffe9e22             ; -90590
+0x3421ec: sdiv.alt                        
+0x3421f0: push.pri                        
+0x3421f4: push.c 0x1                       ; 1
+0x3421fc: call 0x14a550                    ; (unknown)
+0x342204: stor.pri 0x1c6e4                 ; 116452
+0x34220c: zero.pri                        
+0x342210: retn                            

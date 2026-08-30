@@ -1,0 +1,28 @@
+; K44903b8dc6624f08beffb933076dadbbb
+; 24 instruction(s)
+; starts at code address 0x141638
+---
+0x14163c: break                           
+0x141640: break                           
+0x141644: push.c 0x0                       ; 0
+0x14164c: const.pri 0x1d2a4                ; 119460
+0x141654: add.c 0x60                       ; 96
+0x14165c: move.alt                        
+0x141660: load.i                          
+0x141664: add                             
+0x141668: push.pri                        
+0x14166c: const.pri 0x1d644                ; 120388
+0x141674: add.c 0x4                        ; 4
+0x14167c: move.alt                        
+0x141680: load.i                          
+0x141684: add                             
+0x141688: push.pri                        
+0x14168c: push.c 0x3                       ; 3
+0x141694: call 0x3674a8                    ; (unknown)
+0x14169c: jump 0x1416bc                    ; +0x20
+0x1416a4: break                           
+0x1416a8: push2.c 0x10 0x1                 ; 16 1
+0x1416b4: call 0xb1fc                      ; (unknown)
+0x1416bc: break                           
+0x1416c0: const.pri 0x4                    ; 4
+0x1416c8: retn                            

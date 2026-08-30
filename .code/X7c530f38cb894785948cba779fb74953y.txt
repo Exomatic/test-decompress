@@ -1,0 +1,22 @@
+; X7c530f38cb894785948cba779fb74953y
+; 18 instruction(s)
+; starts at code address 0x367430
+---
+0x367434: break                           
+0x367438: break                           
+0x36743c: push.c 0x0                       ; 0
+0x367444: break                           
+0x367448: push.c 0x0                       ; 0
+0x367450: call 0x14c974                    ; (unknown)
+0x367458: break                           
+0x36745c: push.s 0xc                       ; 12
+0x367464: push.c 0x1                       ; 1
+0x36746c: call 0x14ae74                    ; (unknown)
+0x367474: stor.s.pri 0xfffffffc            ; -4
+0x36747c: break                           
+0x367480: load.s.pri 0xfffffffc            ; -4
+0x367488: eq.c.pri 0x1                     ; 1
+0x367490: stor.pri 0x4e3a8                 ; 320424
+0x367498: stack 0x4                        ; 4
+0x3674a0: zero.pri                        
+0x3674a4: retn                            

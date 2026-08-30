@@ -1,0 +1,71 @@
+; __ext_ut_SetNTVOptional
+; 67 instruction(s)
+; starts at code address 0x35ee34
+---
+0x35ee38: break                           
+0x35ee3c: break                           
+0x35ee40: const.pri 0x1c9f4                ; 117236
+0x35ee48: move.alt                        
+0x35ee4c: load.i                          
+0x35ee50: add                             
+0x35ee54: move.alt                        
+0x35ee58: const.pri 0x5df98                ; 384920
+0x35ee60: movs 0x4                         ; 4
+0x35ee68: break                           
+0x35ee6c: const.pri 0x1c9f4                ; 117236
+0x35ee74: move.alt                        
+0x35ee78: load.i                          
+0x35ee7c: add                             
+0x35ee80: push.pri                        
+0x35ee84: push.c 0x1                       ; 1
+0x35ee8c: call 0x350e24                    ; (unknown)
+0x35ee94: break                           
+0x35ee98: const.pri 0x1c9f4                ; 117236
+0x35eea0: move.alt                        
+0x35eea4: load.i                          
+0x35eea8: add                             
+0x35eeac: move.alt                        
+0x35eeb0: const.pri 0x5df9c                ; 384924
+0x35eeb8: movs 0x8                         ; 8
+0x35eec0: break                           
+0x35eec4: const.pri 0x1c9f4                ; 117236
+0x35eecc: move.alt                        
+0x35eed0: load.i                          
+0x35eed4: add                             
+0x35eed8: push.pri                        
+0x35eedc: push.c 0x1                       ; 1
+0x35eee4: call 0x350e24                    ; (unknown)
+0x35eeec: break                           
+0x35eef0: const.pri 0x1c9f4                ; 117236
+0x35eef8: move.alt                        
+0x35eefc: load.i                          
+0x35ef00: add                             
+0x35ef04: move.alt                        
+0x35ef08: const.pri 0x5dfa4                ; 384932
+0x35ef10: movs 0xc                         ; 12
+0x35ef18: break                           
+0x35ef1c: const.pri 0x1c9f4                ; 117236
+0x35ef24: move.alt                        
+0x35ef28: load.i                          
+0x35ef2c: add                             
+0x35ef30: push.pri                        
+0x35ef34: push.c 0x1                       ; 1
+0x35ef3c: call 0x350e24                    ; (unknown)
+0x35ef44: break                           
+0x35ef48: const.pri 0x1c9f4                ; 117236
+0x35ef50: move.alt                        
+0x35ef54: load.i                          
+0x35ef58: add                             
+0x35ef5c: move.alt                        
+0x35ef60: const.pri 0x5dfb0                ; 384944
+0x35ef68: movs 0xc                         ; 12
+0x35ef70: break                           
+0x35ef74: const.pri 0x1c9f4                ; 117236
+0x35ef7c: move.alt                        
+0x35ef80: load.i                          
+0x35ef84: add                             
+0x35ef88: push.pri                        
+0x35ef8c: push.c 0x1                       ; 1
+0x35ef94: call 0x350e24                    ; (unknown)
+0x35ef9c: zero.pri                        
+0x35efa0: retn                            

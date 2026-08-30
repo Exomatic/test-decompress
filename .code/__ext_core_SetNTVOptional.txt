@@ -1,0 +1,216 @@
+; __ext_core_SetNTVOptional
+; 212 instruction(s)
+; starts at code address 0x8
+---
+0x00c: break                           
+0x010: break                           
+0x014: push.c 0x68                      ; 104
+0x01c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x028: break                           
+0x02c: push.c 0x7c                      ; 124
+0x034: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x040: break                           
+0x044: push.c 0x8c                      ; 140
+0x04c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x058: break                           
+0x05c: push.c 0xa0                      ; 160
+0x064: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x070: break                           
+0x074: push.c 0xb8                      ; 184
+0x07c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x088: break                           
+0x08c: push.c 0xc4                      ; 196
+0x094: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x0a0: break                           
+0x0a4: push.c 0xd0                      ; 208
+0x0ac: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x0b8: break                           
+0x0bc: push.c 0xdc                      ; 220
+0x0c4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x0d0: break                           
+0x0d4: push.c 0xec                      ; 236
+0x0dc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x0e8: break                           
+0x0ec: push.c 0xf8                      ; 248
+0x0f4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x100: break                           
+0x104: push.c 0x104                     ; 260
+0x10c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x118: break                           
+0x11c: push.c 0x114                     ; 276
+0x124: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x130: break                           
+0x134: push.c 0x124                     ; 292
+0x13c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x148: break                           
+0x14c: push.c 0x134                     ; 308
+0x154: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x160: break                           
+0x164: push.c 0x144                     ; 324
+0x16c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x178: break                           
+0x17c: push.c 0x154                     ; 340
+0x184: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x190: break                           
+0x194: push.c 0x164                     ; 356
+0x19c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x1a8: break                           
+0x1ac: push.c 0x178                     ; 376
+0x1b4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x1c0: break                           
+0x1c4: push.c 0x188                     ; 392
+0x1cc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x1d8: break                           
+0x1dc: push.c 0x194                     ; 404
+0x1e4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x1f0: break                           
+0x1f4: push.c 0x1a0                     ; 416
+0x1fc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x208: break                           
+0x20c: push.c 0x1ac                     ; 428
+0x214: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x220: break                           
+0x224: push.c 0x1b8                     ; 440
+0x22c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x238: break                           
+0x23c: push.c 0x1c4                     ; 452
+0x244: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x250: break                           
+0x254: push.c 0x1d0                     ; 464
+0x25c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x268: break                           
+0x26c: push.c 0x1dc                     ; 476
+0x274: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x280: break                           
+0x284: push.c 0x1ec                     ; 492
+0x28c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x298: break                           
+0x29c: push.c 0x1fc                     ; 508
+0x2a4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x2b0: break                           
+0x2b4: push.c 0x208                     ; 520
+0x2bc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x2c8: break                           
+0x2cc: push.c 0x214                     ; 532
+0x2d4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x2e0: break                           
+0x2e4: push.c 0x224                     ; 548
+0x2ec: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x2f8: break                           
+0x2fc: push.c 0x234                     ; 564
+0x304: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x310: break                           
+0x314: push.c 0x244                     ; 580
+0x31c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x328: break                           
+0x32c: push.c 0x258                     ; 600
+0x334: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x340: break                           
+0x344: push.c 0x264                     ; 612
+0x34c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x358: break                           
+0x35c: push.c 0x270                     ; 624
+0x364: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x370: break                           
+0x374: push.c 0x27c                     ; 636
+0x37c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x388: break                           
+0x38c: push.c 0x28c                     ; 652
+0x394: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x3a0: break                           
+0x3a4: push.c 0x298                     ; 664
+0x3ac: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x3b8: break                           
+0x3bc: push.c 0x2a4                     ; 676
+0x3c4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x3d0: break                           
+0x3d4: push.c 0x2b4                     ; 692
+0x3dc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x3e8: break                           
+0x3ec: push.c 0x2c4                     ; 708
+0x3f4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x400: break                           
+0x404: push.c 0x2dc                     ; 732
+0x40c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x418: break                           
+0x41c: push.c 0x2f0                     ; 752
+0x424: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x430: break                           
+0x434: push.c 0x304                     ; 772
+0x43c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x448: break                           
+0x44c: push.c 0x318                     ; 792
+0x454: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x460: break                           
+0x464: push.c 0x330                     ; 816
+0x46c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x478: break                           
+0x47c: push.c 0x344                     ; 836
+0x484: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x490: break                           
+0x494: push.c 0x358                     ; 856
+0x49c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x4a8: break                           
+0x4ac: push.c 0x370                     ; 880
+0x4b4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x4c0: break                           
+0x4c4: push.c 0x388                     ; 904
+0x4cc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x4d8: break                           
+0x4dc: push.c 0x394                     ; 916
+0x4e4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x4f0: break                           
+0x4f4: push.c 0x3a0                     ; 928
+0x4fc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x508: break                           
+0x50c: push.c 0x3ac                     ; 940
+0x514: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x520: break                           
+0x524: push.c 0x3b8                     ; 952
+0x52c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x538: break                           
+0x53c: push.c 0x3c4                     ; 964
+0x544: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x550: break                           
+0x554: push.c 0x3d0                     ; 976
+0x55c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x568: break                           
+0x56c: push.c 0x3dc                     ; 988
+0x574: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x580: break                           
+0x584: push.c 0x3ec                     ; 1004
+0x58c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x598: break                           
+0x59c: push.c 0x3f8                     ; 1016
+0x5a4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x5b0: break                           
+0x5b4: push.c 0x404                     ; 1028
+0x5bc: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x5c8: break                           
+0x5cc: push.c 0x410                     ; 1040
+0x5d4: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x5e0: break                           
+0x5e4: push.c 0x41c                     ; 1052
+0x5ec: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x5f8: break                           
+0x5fc: push.c 0x428                     ; 1064
+0x604: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x610: break                           
+0x614: push.c 0x434                     ; 1076
+0x61c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x628: break                           
+0x62c: push.c 0x440                     ; 1088
+0x634: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x640: break                           
+0x644: push.c 0x450                     ; 1104
+0x64c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x658: break                           
+0x65c: push.c 0x460                     ; 1120
+0x664: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x670: break                           
+0x674: push.c 0x478                     ; 1144
+0x67c: sysreq.n 0 0x1                   ; MarkNativeAsOptional 1
+0x688: break                           
+0x68c: sysreq.n 1 0x0                   ; VerifyCoreVersion 0
+0x698: zero.pri                        
+0x69c: retn                            

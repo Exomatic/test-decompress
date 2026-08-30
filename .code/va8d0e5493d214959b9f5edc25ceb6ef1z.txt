@@ -1,0 +1,8 @@
+; va8d0e5493d214959b9f5edc25ceb6ef1z
+; 4 instruction(s)
+; starts at code address 0x153c0c
+---
+0x153c10: break                           
+0x153c14: break                           
+0x153c18: load.pri 0x1c7f0                 ; 116720
+0x153c20: retn   

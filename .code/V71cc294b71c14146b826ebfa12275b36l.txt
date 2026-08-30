@@ -1,0 +1,8 @@
+; V71cc294b71c14146b826ebfa12275b36l
+; 4 instruction(s)
+; starts at code address 0x3790c8
+---
+0x3790cc: break                           
+0x3790d0: break                           
+0x3790d4: load.pri 0x1c7fc                 ; 116732
+0x3790dc: retn                            

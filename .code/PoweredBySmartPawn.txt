@@ -1,0 +1,8 @@
+; PoweredBySmartPawn
+; 4 instruction(s)
+; starts at code address 0x3516e8
+---
+0x3516ec: break                           
+0x3516f0: break                           
+0x3516f4: zero.pri                        
+0x3516f8: retn      

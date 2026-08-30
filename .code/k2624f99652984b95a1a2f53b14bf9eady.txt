@@ -1,0 +1,8 @@
+; k2624f99652984b95a1a2f53b14bf9eady
+; 4 instruction(s)
+; starts at code address 0x378188
+---
+0x37818c: break                           
+0x378190: break                           
+0x378194: zero.pri                        
+0x378198: retn  

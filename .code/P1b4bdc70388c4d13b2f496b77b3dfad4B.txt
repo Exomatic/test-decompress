@@ -1,0 +1,29 @@
+; P1b4bdc70388c4d13b2f496b77b3dfad4B
+; 25 instruction(s)
+; starts at code address 0x350b58
+---
+0x350b5c: break                           
+0x350b60: break                           
+0x350b64: push.c 0x0                       ; 0
+0x350b6c: break                           
+0x350b70: const.pri 0x1ca74                ; 117364
+0x350b78: add.c 0x10                       ; 16
+0x350b80: move.alt                        
+0x350b84: load.i                          
+0x350b88: add                             
+0x350b8c: push.pri                        
+0x350b90: push.s 0xc                       ; 12
+0x350b98: push.c 0x2                       ; 2
+0x350ba0: call 0x36ffe0                    ; (unknown)
+0x350ba8: stor.s.pri 0xfffffffc            ; -4
+0x350bb0: break                           
+0x350bb4: const.pri 0x56334                ; 353076
+0x350bbc: push.pri                        
+0x350bc0: push.s 0xfffffffc                ; -4
+0x350bc8: push.c 0x1                       ; 1
+0x350bd0: call 0x3317b8                    ; (unknown)
+0x350bd8: pop.alt                         
+0x350bdc: stor.i                          
+0x350be0: stack 0x4                        ; 4
+0x350be8: zero.pri                        
+0x350bec: retn   

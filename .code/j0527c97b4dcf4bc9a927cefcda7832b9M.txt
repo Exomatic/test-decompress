@@ -1,0 +1,82 @@
+; j0527c97b4dcf4bc9a927cefcda7832b9M
+; 78 instruction(s)
+; starts at code address 0x3306a0
+---
+0x3306a4: break                           
+0x3306a8: break                           
+0x3306ac: stack 0xffffffec                 ; -20
+0x3306b4: zero.pri                        
+0x3306b8: addr.alt 0xffffffec              ; -20
+0x3306c0: fill 0x4                         ; 4
+0x3306c8: break                           
+0x3306cc: const.pri 0x1ca70                ; 117360
+0x3306d4: load.i                          
+0x3306d8: switch 0x33082c                  ; 3344428
+0x3306e0: break                           
+0x3306e4: heap 0x14                        ; 20
+0x3306ec: push.alt                        
+0x3306f0: push.c 0x0                       ; 0
+0x3306f8: call 0x355d38                    ; (unknown)
+0x330700: pop.pri                         
+0x330704: push.pri                        
+0x330708: push2.c 0x4358 0x14              ; 17240 20
+0x330714: push.adr 0xffffffec              ; -20
+0x33071c: sysreq.n 37 0x4                  ; FormatEx 4
+0x330728: heap 0xffffffec                  ; -20
+0x330730: jump 0x330840                    ; +0x110
+0x330738: break                           
+0x33073c: push2.c 0x7 0x1cd08              ; 7 118024
+0x330748: const.pri 0x1ca74                ; 117364
+0x330750: add.c 0x8                        ; 8
+0x330758: move.alt                        
+0x33075c: load.i                          
+0x330760: add                             
+0x330764: push.pri                        
+0x330768: push.s 0xc                       ; 12
+0x330770: push.c 0x4                       ; 4
+0x330778: call 0x16734                     ; (unknown)
+0x330780: break                           
+0x330784: push.c 0x14                      ; 20
+0x33078c: push.adr 0xffffffec              ; -20
+0x330794: const.pri 0x1ca74                ; 117364
+0x33079c: add.c 0xc                        ; 12
+0x3307a4: move.alt                        
+0x3307a8: load.i                          
+0x3307ac: add                             
+0x3307b0: push.pri                        
+0x3307b4: push.s 0xc                       ; 12
+0x3307bc: push.c 0x4                       ; 4
+0x3307c4: call 0x35c3bc                    ; (unknown)
+0x3307cc: break                           
+0x3307d0: push3.c 0x18 0x1ccf0 0x16d78     ; 24 118000 93560
+0x3307e0: push.adr 0xffffffec              ; -20
+0x3307e8: push.c 0x4                       ; 4
+0x3307f0: call 0x1475ac                    ; (unknown)
+0x3307f8: break                           
+0x3307fc: push4.c 0x1cd08 0x1ccf0 0x121e0 0x14 ; 118024 118000 74208 20
+0x330810: push.adr 0xffffffec              ; -20
+0x330818: sysreq.n 37 0x5                  ; FormatEx 5
+0x330824: jump 0x330840                    ; +0x1c
+0x33082c: casetbl 0x1                      ; 1
+0x330840: break                           
+0x330844: push2.c 0x0 0x1ccdc              ; 0 117980
+0x330850: push.adr 0xffffffec              ; -20
+0x330858: push.c 0x3                       ; 3
+0x330860: call 0x336abc                    ; (unknown)
+0x330868: jump 0x330888                    ; +0x20
+0x330870: break                           
+0x330874: push2.c 0x5 0x1                  ; 5 1
+0x330880: call 0xb1fc                      ; (unknown)
+0x330888: break                           
+0x33088c: push2.c 0x0 0x1cd10              ; 0 118032
+0x330898: push.adr 0xffffffec              ; -20
+0x3308a0: push.c 0x3                       ; 3
+0x3308a8: call 0x1417d0                    ; (unknown)
+0x3308b0: jump 0x3308d0                    ; +0x20
+0x3308b8: break                           
+0x3308bc: push2.c 0x6 0x1                  ; 6 1
+0x3308c8: call 0xb1fc                      ; (unknown)
+0x3308d0: break                           
+0x3308d4: const.pri 0x3                    ; 3
+0x3308dc: stack 0x14                       ; 20
+0x3308e4: retn                            

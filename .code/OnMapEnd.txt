@@ -1,0 +1,55 @@
+; OnMapEnd
+; 51 instruction(s)
+; starts at code address 0x337bf4
+---
+0x337bf8: break                           
+0x337bfc: break                           
+0x337c00: const.pri 0x1e508                ; 124168
+0x337c08: add.c 0x4                        ; 4
+0x337c10: load.i                          
+0x337c14: push.pri                        
+0x337c18: push2.c 0x3 0x2                  ; 3 2
+0x337c24: call 0x34af34                    ; (unknown)
+0x337c2c: break                           
+0x337c30: const.pri 0x1e508                ; 124168
+0x337c38: add.c 0x3c                       ; 60
+0x337c40: load.i                          
+0x337c44: move.alt                        
+0x337c48: zero.pri                        
+0x337c4c: jsgeq 0x337c68                   ; +0x1c
+0x337c54: break                           
+0x337c58: push.c 0x0                       ; 0
+0x337c60: call 0x343888                    ; (unknown)
+0x337c68: break                           
+0x337c6c: load.pri 0x42b7c                 ; 273276
+0x337c74: move.alt                        
+0x337c78: zero.pri                        
+0x337c7c: xchg                            
+0x337c80: jsleq 0x337ca8                   ; +0x28
+0x337c88: load.pri 0x42b78                 ; 273272
+0x337c90: jzer 0x337ca8                    ; +0x18
+0x337c98: const.pri 0x1                    ; 1
+0x337ca0: jump 0x337cac                    ; +0xc
+0x337ca8: zero.pri                        
+0x337cac: jzer 0x337cc8                    ; +0x1c
+0x337cb4: break                           
+0x337cb8: push.c 0x0                       ; 0
+0x337cc0: call 0x37b170                    ; (unknown)
+0x337cc8: break                           
+0x337ccc: const.pri 0x42ccc                ; 273612
+0x337cd4: add.c 0x4                        ; 4
+0x337cdc: move.alt                        
+0x337ce0: zero.pri                        
+0x337ce4: stor.i                          
+0x337ce8: break                           
+0x337cec: push2.c 0x1 0x1                  ; 1 1
+0x337cf8: call 0x361e88                    ; (unknown)
+0x337d00: break                           
+0x337d04: load.pri 0x42b74                 ; 273268
+0x337d0c: jzer 0x337d30                    ; +0x24
+0x337d14: break                           
+0x337d18: push 0x42b74                     ; 273268
+0x337d20: push.c 0x1                       ; 1
+0x337d28: call 0x1002c                     ; (unknown)
+0x337d30: zero.pri                        
+0x337d34: retn                            

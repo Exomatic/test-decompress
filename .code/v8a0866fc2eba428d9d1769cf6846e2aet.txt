@@ -1,0 +1,29 @@
+; v8a0866fc2eba428d9d1769cf6846e2aet
+; 25 instruction(s)
+; starts at code address 0x37dba8
+---
+0x37dbac: break                           
+0x37dbb0: break                           
+0x37dbb4: const.pri 0x1fa78                ; 129656
+0x37dbbc: push.pri                        
+0x37dbc0: const.alt 0x49b3c                ; 301884
+0x37dbc8: load.s.pri 0xc                   ; 12
+0x37dbd0: bounds 0x7ff                     ; 2047
+0x37dbd8: lidx                            
+0x37dbdc: bounds 0x41                      ; 65
+0x37dbe4: pop.alt                         
+0x37dbe8: idxaddr                         
+0x37dbec: move.alt                        
+0x37dbf0: load.i                          
+0x37dbf4: add                             
+0x37dbf8: push.pri                        
+0x37dbfc: load.s.pri 0x10                  ; 16
+0x37dc04: bounds 0x41                      ; 65
+0x37dc0c: pop.alt                         
+0x37dc10: idxaddr                         
+0x37dc14: load.i                          
+0x37dc18: jzer 0x37dc2c                    ; +0x14
+0x37dc20: zero.pri                        
+0x37dc24: jump 0x37dc34                    ; +0x10
+0x37dc2c: const.pri 0x3                    ; 3
+0x37dc34: retn                            

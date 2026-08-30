@@ -1,0 +1,28 @@
+; i3c226282a13a4425a33acbfd57f763a6m
+; 24 instruction(s)
+; starts at code address 0x335244
+---
+0x335248: break                           
+0x33524c: break                           
+0x335250: load.s.pri 0x10                  ; 16
+0x335258: eq.c.pri 0xffffffff              ; -1
+0x335260: jzer 0x33528c                    ; +0x2c
+0x335268: break                           
+0x33526c: push2.c 0x5b390 0x1b288          ; 373648 111240
+0x335278: sysreq.n 138 0x2                 ; PrintToServer 2
+0x335284: jump 0x3352e0                    ; +0x5c
+0x33528c: break                           
+0x335290: const.alt 0x24e50                ; 151120
+0x335298: load.s.pri 0x10                  ; 16
+0x3352a0: bounds 0x41                      ; 65
+0x3352a8: lidx                            
+0x3352ac: move.alt                        
+0x3352b0: zero.pri                        
+0x3352b4: jsgeq 0x3352e0                   ; +0x2c
+0x3352bc: break                           
+0x3352c0: push2.c 0x5b390 0x11af4          ; 373648 72436
+0x3352cc: push.s 0x10                      ; 16
+0x3352d4: sysreq.n 62 0x3                  ; PrintToConsole 3
+0x3352e0: break                           
+0x3352e4: const.pri 0x4                    ; 4
+0x3352ec: retn                            

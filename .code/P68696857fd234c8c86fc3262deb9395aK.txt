@@ -1,0 +1,8 @@
+; P68696857fd234c8c86fc3262deb9395aK
+; 4 instruction(s)
+; starts at code address 0x338c94
+---
+0x338c98: break                           
+0x338c9c: break                           
+0x338ca0: load.pri 0x1c6fc                 ; 116476
+0x338ca8: retn           

@@ -1,0 +1,45 @@
+; Nd0151fad17a44f09a6040dee7d10e5a6V
+; 41 instruction(s)
+; starts at code address 0x17f724
+---
+0x17f728: break                           
+0x17f72c: break                           
+0x17f730: load.s.pri 0xc                   ; 12
+0x17f738: push.pri                        
+0x17f73c: push.c 0x0                       ; 0
+0x17f744: call 0x345d64                    ; (unknown)
+0x17f74c: pop.alt                         
+0x17f750: xchg                            
+0x17f754: jsleq 0x17f808                   ; +0xb4
+0x17f75c: push.c 0x0                       ; 0
+0x17f764: const.pri 0x1e668                ; 124520
+0x17f76c: move.alt                        
+0x17f770: load.i                          
+0x17f774: add                             
+0x17f778: push.pri                        
+0x17f77c: const.pri 0x1cb84                ; 117636
+0x17f784: add.c 0x4                        ; 4
+0x17f78c: load.i                          
+0x17f790: push.pri                        
+0x17f794: push.s 0xc                       ; 12
+0x17f79c: push.c 0x4                       ; 4
+0x17f7a4: call 0x1466f0                    ; (unknown)
+0x17f7ac: const.alt 0x1                    ; 1
+0x17f7b4: xchg                            
+0x17f7b8: sleq                            
+0x17f7bc: push.pri                        
+0x17f7c0: push.alt                        
+0x17f7c4: push.c 0x0                       ; 0
+0x17f7cc: call 0x345d64                    ; (unknown)
+0x17f7d4: pop.alt                         
+0x17f7d8: xchg                            
+0x17f7dc: sleq                            
+0x17f7e0: swap.alt                        
+0x17f7e4: and                             
+0x17f7e8: pop.alt                         
+0x17f7ec: not                             
+0x17f7f0: jzer 0x17f808                    ; +0x18
+0x17f7f8: const.pri 0x1                    ; 1
+0x17f800: jump 0x17f80c                    ; +0xc
+0x17f808: zero.pri                        
+0x17f80c: retn                            

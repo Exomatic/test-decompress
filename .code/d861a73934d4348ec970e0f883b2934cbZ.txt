@@ -1,0 +1,13 @@
+; d861a73934d4348ec970e0f883b2934cbZ
+; 9 instruction(s)
+; starts at code address 0x165dc
+---
+0x165e0: break                           
+0x165e4: break                           
+0x165e8: push.c 0x0                       ; 0
+0x165f0: push.s 0xc                       ; 12
+0x165f8: push.c 0x2                       ; 2
+0x16600: call 0x150b44                    ; (unknown)
+0x16608: break                           
+0x1660c: const.pri 0x3                    ; 3
+0x16614: retn                            

@@ -1,0 +1,34 @@
+; s29ca39858a6141098b0227e3bdfbccb3z
+; 30 instruction(s)
+; starts at code address 0x13780
+---
+0x13784: break                           
+0x13788: break                           
+0x1378c: const.alt 0x24e50                ; 151120
+0x13794: load.s.pri 0x10                  ; 16
+0x1379c: bounds 0x41                      ; 65
+0x137a4: lidx                            
+0x137a8: move.alt                        
+0x137ac: zero.pri                        
+0x137b0: jsgeq 0x13824                    ; +0x74
+0x137b8: break                           
+0x137bc: const.pri 0x1d2a4                ; 119460
+0x137c4: add.c 0x6c                       ; 108
+0x137cc: move.alt                        
+0x137d0: load.i                          
+0x137d4: add                             
+0x137d8: move.alt                        
+0x137dc: const.pri 0x5b574                ; 374132
+0x137e4: movs 0x14                        ; 20
+0x137ec: break                           
+0x137f0: const.pri 0x1d2a4                ; 119460
+0x137f8: add.c 0x6c                       ; 108
+0x13800: move.alt                        
+0x13804: load.i                          
+0x13808: add                             
+0x1380c: push.pri                        
+0x13810: push.s 0x10                      ; 16
+0x13818: sysreq.n 73 0x2                  ; ClientCommand 2
+0x13824: break                           
+0x13828: const.pri 0x4                    ; 4
+0x13830: retn                            

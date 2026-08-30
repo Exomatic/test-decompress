@@ -1,0 +1,61 @@
+; __pl_smac_SetNTVOptional
+; 57 instruction(s)
+; starts at code address 0x182838
+---
+0x18283c: break                           
+0x182840: break                           
+0x182844: const.pri 0x1d644                ; 120388
+0x18284c: add.c 0x4                        ; 4
+0x182854: move.alt                        
+0x182858: load.i                          
+0x18285c: add                             
+0x182860: move.alt                        
+0x182864: const.pri 0x5c79c                ; 378780
+0x18286c: movs 0xc                         ; 12
+0x182874: break                           
+0x182878: const.pri 0x1d644                ; 120388
+0x182880: add.c 0x4                        ; 4
+0x182888: move.alt                        
+0x18288c: load.i                          
+0x182890: add                             
+0x182894: push.pri                        
+0x182898: push.c 0x1                       ; 1
+0x1828a0: call 0x16f10                     ; (unknown)
+0x1828a8: break                           
+0x1828ac: const.pri 0x1d644                ; 120388
+0x1828b4: add.c 0x4                        ; 4
+0x1828bc: move.alt                        
+0x1828c0: load.i                          
+0x1828c4: add                             
+0x1828c8: move.alt                        
+0x1828cc: const.pri 0x5c7a8                ; 378792
+0x1828d4: movs 0x10                        ; 16
+0x1828dc: break                           
+0x1828e0: const.pri 0x1d644                ; 120388
+0x1828e8: add.c 0x4                        ; 4
+0x1828f0: move.alt                        
+0x1828f4: load.i                          
+0x1828f8: add                             
+0x1828fc: push.pri                        
+0x182900: push.c 0x1                       ; 1
+0x182908: call 0x16f10                     ; (unknown)
+0x182910: break                           
+0x182914: const.pri 0x1d644                ; 120388
+0x18291c: add.c 0x4                        ; 4
+0x182924: move.alt                        
+0x182928: load.i                          
+0x18292c: add                             
+0x182930: move.alt                        
+0x182934: const.pri 0x5c7b8                ; 378808
+0x18293c: movs 0x14                        ; 20
+0x182944: break                           
+0x182948: const.pri 0x1d644                ; 120388
+0x182950: add.c 0x4                        ; 4
+0x182958: move.alt                        
+0x18295c: load.i                          
+0x182960: add                             
+0x182964: push.pri                        
+0x182968: push.c 0x1                       ; 1
+0x182970: call 0x16f10                     ; (unknown)
+0x182978: zero.pri                        
+0x18297c: retn                            

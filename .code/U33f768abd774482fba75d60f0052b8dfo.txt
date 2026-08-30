@@ -1,0 +1,58 @@
+; U33f768abd774482fba75d60f0052b8dfo
+; 54 instruction(s)
+; starts at code address 0x355868
+---
+0x35586c: break                           
+0x355870: break                           
+0x355874: push.c 0x0                       ; 0
+0x35587c: call 0x14c974                    ; (unknown)
+0x355884: break                           
+0x355888: const.pri 0x1                    ; 1
+0x355890: load.s.alt 0x10                  ; 16
+0x355898: sleq                            
+0x35589c: push.pri                        
+0x3558a0: push.alt                        
+0x3558a4: push.c 0x0                       ; 0
+0x3558ac: call 0x345d64                    ; (unknown)
+0x3558b4: pop.alt                         
+0x3558b8: sgeq                            
+0x3558bc: pop.alt                         
+0x3558c0: and                             
+0x3558c4: jzer 0x355938                    ; +0x74
+0x3558cc: const.alt 0x24e50                ; 151120
+0x3558d4: load.s.pri 0x10                  ; 16
+0x3558dc: bounds 0x41                      ; 65
+0x3558e4: lidx                            
+0x3558e8: move.alt                        
+0x3558ec: zero.pri                        
+0x3558f0: xchg                            
+0x3558f4: jsleq 0x355938                   ; +0x44
+0x3558fc: const.alt 0x1d740                ; 120640
+0x355904: load.s.pri 0x10                  ; 16
+0x35590c: bounds 0x41                      ; 65
+0x355914: lidx                            
+0x355918: const.alt 0x1                    ; 1
+0x355920: jsleq 0x355938                   ; +0x18
+0x355928: const.pri 0x1                    ; 1
+0x355930: jump 0x35593c                    ; +0xc
+0x355938: zero.pri                        
+0x35593c: jzer 0x3559c0                    ; +0x84
+0x355944: break                           
+0x355948: stack 0xffffffc0                 ; -64
+0x355950: break                           
+0x355954: push2.c 0x0 0x40                 ; 0 64
+0x355960: push.adr 0xffffffc0              ; -64
+0x355968: push.s 0x10                      ; 16
+0x355970: push.c 0x4                       ; 4
+0x355978: call 0x34a01c                    ; (unknown)
+0x355980: jzer 0x3559b8                    ; +0x38
+0x355988: break                           
+0x35598c: push2.c 0x1 0x1                  ; 1 1
+0x355998: push.adr 0xffffffc0              ; -64
+0x3559a0: push 0x56440                     ; 353344
+0x3559a8: push.c 0x4                       ; 4
+0x3559b0: call 0x146bc8                    ; (unknown)
+0x3559b8: stack 0x40                       ; 64
+0x3559c0: break                           
+0x3559c4: const.pri 0x4                    ; 4
+0x3559cc: retn                            

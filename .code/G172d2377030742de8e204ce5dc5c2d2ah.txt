@@ -1,0 +1,8 @@
+; G172d2377030742de8e204ce5dc5c2d2ah
+; 4 instruction(s)
+; starts at code address 0x186540
+---
+0x186544: break                           
+0x186548: break                           
+0x18654c: load.pri 0x1c6d4                 ; 116436
+0x186554: retn                            

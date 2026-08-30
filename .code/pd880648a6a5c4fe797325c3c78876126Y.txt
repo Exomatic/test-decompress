@@ -1,0 +1,10 @@
+; pd880648a6a5c4fe797325c3c78876126Y
+; 6 instruction(s)
+; starts at code address 0x366308
+---
+0x36630c: break                           
+0x366310: break                           
+0x366314: push.c 0x0                       ; 0
+0x36631c: call 0x380020                    ; (unknown)
+0x366324: zero.pri                        
+0x366328: retn                            
