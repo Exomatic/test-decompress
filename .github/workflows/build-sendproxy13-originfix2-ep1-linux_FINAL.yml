@@ -310,6 +310,41 @@ jobs:
           grep -nE 'SendProxy_Origin_AWH|g_bAWHCallingOriginalOrigin|isOrigin' deps/sendproxy/extension/extension.cpp
           cat deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt
 
+      - name: Make legacy SendProxy GCC-compatible
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path("deps/sendproxy/extension/AMBuildScript")
+          s = p.read_text(encoding="utf-8")
+
+          # SourceMod/AMTL at the pinned commit uses std::make_unique, which
+          # requires at least C++14. The old SendProxy code also relies on
+          # constructs MSVC accepts but modern GCC diagnoses more strictly.
+          if "'-std=c++11'," not in s:
+              raise SystemExit("C++11 flag not found in AMBuildScript")
+          s = s.replace("'-std=c++11',", "'-std=c++14',", 1)
+
+          # Do not turn legacy SDK compatibility warnings into hard failures.
+          s = re.sub(r"(?m)^\s*'-Werror',\s*\n", "", s, count=1)
+
+          marker = "        '-std=c++14',\n"
+          if marker not in s:
+              raise SystemExit("C++14 marker not found after patch")
+          s = s.replace(
+              marker,
+              marker +
+              "        '-fpermissive',\n"
+              "        '-Wno-class-memaccess',\n",
+              1
+          )
+
+          p.write_text(s, encoding="utf-8", newline="\n")
+          PY
+
+          grep -nE -- "-std=c\+\+14|-fpermissive|-Wno-class-memaccess|-Werror"             deps/sendproxy/extension/AMBuildScript || true
+
       - name: Configure and build Episode One target
         run: |
           mkdir -p deps/sendproxy/extension/build
