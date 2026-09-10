@@ -50,17 +50,17 @@ jobs:
         shell: pwsh
         run: |
           # SendProxy v1.2 predates the current AMTL directory layout.
-          # SM 1.11 needs public/amtl as the include root: this resolves both amtl/am-bits.h and amtl/am-string.h.
+          # SM 1.11 needs BOTH public/amtl/amtl (bare am-string.h) and public/amtl (amtl/am-bits.h).
           $file = "deps/sendproxy/extension/AMBuildScript"
           $text = Get-Content $file -Raw
           $old = "os.path.join(self.sm_root, 'public', 'amtl', 'include'),"
-          $new = "os.path.join(self.sm_root, 'public', 'amtl'),"
+          $new = "os.path.join(self.sm_root, 'public', 'amtl', 'amtl'),`n      os.path.join(self.sm_root, 'public', 'amtl'),"
 
           if (-not $text.Contains($old)) {
             throw "Could not find the old AMTL include path in SendProxy AMBuildScript"
           }
 
-          $text = $text.Replace($old, $new)
+          $text = $text.Replace($old, $new.TrimEnd())
           Set-Content -Path $file -Value $text -Encoding UTF8
 
           # Use the SourceMod 1.11 copies instead of SendProxy's old bundled SDK glue.
