@@ -67,6 +67,148 @@ jobs:
           Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.cpp -Force -ErrorAction SilentlyContinue
           Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.h -Force -ErrorAction SilentlyContinue
 
+          # SendProxy v1.2 relied on transitive includes/globals from older SDK snapshots.
+          # Make those dependencies explicit for the current Episode One SDK tree.
+          $extFile = "deps/sendproxy/extension/extension.cpp"
+          $extText = Get-Content $extFile -Raw
+
+          if (-not $extText.Contains('#include "tier0/threadtools.h"')) {
+            $extText = $extText.Replace(
+              '#include "extension.h"',
+              "#include `"extension.h`"`r`n#include `"tier0/threadtools.h`""
+            )
+          }
+
+          $oldCvar = 'GET_V_IFACE_ANY(GetEngineFactory, g_pCVar, ICvar, CVAR_INTERFACE_VERSION);'
+          $newCvar = "ICvar *pCVar = NULL;`r`n`tGET_V_IFACE_ANY(GetEngineFactory, pCVar, ICvar, CVAR_INTERFACE_VERSION);"
+
+          if (-not $extText.Contains($oldCvar)) {
+            throw "Could not find the old g_pCVar interface lookup in extension.cpp"
+          }
+
+          $extText = $extText.Replace($oldCvar, $newCvar)
+          Set-Content -Path $extFile -Value $extText -Encoding UTF8
+
+          Write-Host "Patched AMTL include paths:"
+          Select-String -Path $file -Pattern "amtl"
+          Write-Host "Patched legacy SendProxy source:"
+          Select-String -Path $extFile -Pattern "threadtools|pCVar"
+
+      - name: Configure and build Episode One target
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps/sendproxy/extension/build | Out-Null
+          Push-Location deps/sendproxy/extension/build
+
+          python ../configure.py `
+            -s episode1 `
+            --hl2sdk-root="$env:GITHUB_WORKSPACE/deps/hl2sdk" `
+            --mms-path="$env:GITHUB_WORKSPACE/deps/metamod-source" `
+            --sm-path="$env:GITHUB_WORKSPACE/deps/sourcemod" `
+            --enable-optimize
+
+          ambuild
+          Pop-Location
+
+      - name: Package DLL
+        shell: pwsh
+        run: |
+          $dll = Get-ChildItem deps/sendproxy/extension/build -Recurse -File -Filter 'sendproxy.ext.1.ep1.dll' | Select-Object -First 1
+
+          if (-not $dll) {
+            Write-Host 'Build tree:'
+            Get-ChildItem deps/sendproxy/extension/build -Recurse | ForEach-Object { Write-Host $_.FullName }
+            throw 'sendproxy.ext.1.ep1.dll was not produced'
+          }
+
+          New-Item -ItemType Directory -Force artifact/addons/sourcemod/extensions | Out-Null
+          Copy-Item $dll.FullName artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll
+
+          if (Test-Path deps/sendproxy/addons/sourcemod/gamedata) {
+            Copy-Item deps/sendproxy/addons/sourcemod/gamedata artifact/addons/sourcemod/gamedata -Recurse -Force
+          }
+
+          if (Test-Path deps/sendproxy/addons/sourcemod/scripting) {
+            Copy-Item deps/sendproxy/addons/sourcemod/scripting artifact/addons/sourcemod/scripting -Recurse -Force
+          }
+
+          Get-FileHash artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll -Algorithm SHA256 | Format-List
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: sendproxy-css34-win32
+          path: artifact/
+          if-no-files-found: error
+name: Build SendProxy EP1 Windows x86
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-sendproxy-ep1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up MSVC x86
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+
+      - name: Fetch exact dependencies
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps | Out-Null
+
+          git clone --branch v1.2 --depth 1 https://github.com/akowald/sendproxy.git deps/sendproxy
+
+          git clone https://github.com/alliedmodders/sourcemod.git deps/sourcemod
+          git -C deps/sourcemod checkout 832519ab647cdecb85763918dbfed1cb5e79c6cb
+          git -C deps/sourcemod submodule update --init --recursive
+
+          git clone https://github.com/alliedmodders/metamod-source.git deps/metamod-source
+          git -C deps/metamod-source checkout 9fed12f
+          git -C deps/metamod-source submodule update --init --recursive
+
+          New-Item -ItemType Directory -Force deps/hl2sdk | Out-Null
+          git clone --branch episode1 --single-branch https://github.com/alliedmodders/hl2sdk.git deps/hl2sdk/hl2sdk-episode1
+
+          git clone https://github.com/alliedmodders/ambuild.git deps/ambuild
+          python -m pip install --upgrade pip
+          python -m pip install ./deps/ambuild
+
+      - name: Adapt SendProxy build script for SourceMod 1.11
+        shell: pwsh
+        run: |
+          # SendProxy v1.2 predates the current AMTL directory layout.
+          # SM 1.11 needs BOTH public/amtl/amtl (bare am-string.h) and public/amtl (amtl/am-bits.h).
+          $file = "deps/sendproxy/extension/AMBuildScript"
+          $text = Get-Content $file -Raw
+          $old = "os.path.join(self.sm_root, 'public', 'amtl', 'include'),"
+          $new = "os.path.join(self.sm_root, 'public', 'amtl', 'amtl'),`n      os.path.join(self.sm_root, 'public', 'amtl'),"
+
+          if (-not $text.Contains($old)) {
+            throw "Could not find the old AMTL include path in SendProxy AMBuildScript"
+          }
+
+          $text = $text.Replace($old, $new.TrimEnd())
+          Set-Content -Path $file -Value $text -Encoding UTF8
+
+          # Use the SourceMod 1.11 copies instead of SendProxy's old bundled SDK glue.
+          Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.cpp -Force -ErrorAction SilentlyContinue
+          Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.h -Force -ErrorAction SilentlyContinue
+
           Write-Host "Patched AMTL include path:"
           Select-String -Path $file -Pattern "amtl"
 
