@@ -46,11 +46,29 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install ./deps/ambuild
 
-      - name: Use SourceMod 1.11 extension SDK headers
+      - name: Adapt SendProxy build script for SourceMod 1.11
         shell: pwsh
         run: |
+          # SendProxy v1.2 predates the current AMTL directory layout.
+          # SM 1.11 keeps am-string.h under public/amtl/amtl, not public/amtl/include.
+          $file = "deps/sendproxy/extension/AMBuildScript"
+          $text = Get-Content $file -Raw
+          $old = "os.path.join(self.sm_root, 'public', 'amtl', 'include'),"
+          $new = "os.path.join(self.sm_root, 'public', 'amtl', 'amtl'),"
+
+          if (-not $text.Contains($old)) {
+            throw "Could not find the old AMTL include path in SendProxy AMBuildScript"
+          }
+
+          $text = $text.Replace($old, $new)
+          Set-Content -Path $file -Value $text -Encoding UTF8
+
+          # Use the SourceMod 1.11 copies instead of SendProxy's old bundled SDK glue.
           Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.cpp -Force -ErrorAction SilentlyContinue
           Remove-Item deps/sendproxy/extension/sdk/smsdk_ext.h -Force -ErrorAction SilentlyContinue
+
+          Write-Host "Patched AMTL include path:"
+          Select-String -Path $file -Pattern "amtl"
 
       - name: Configure and build Episode One target
         shell: pwsh
