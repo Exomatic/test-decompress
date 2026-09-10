@@ -1,0 +1,177 @@
+name: Build SendProxy 1.3 CSS34 EP1 Windows x86
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-sendproxy13-ep1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up MSVC x86
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+
+      - name: Fetch exact dependencies
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps | Out-Null
+
+          git clone https://github.com/TheByKotik/sendproxy.git deps/sendproxy
+          git -C deps/sendproxy checkout ebf42e67a3e75b413783ab3436d3d1e20635a8f9
+
+          git clone https://github.com/alliedmodders/sourcemod.git deps/sourcemod
+          git -C deps/sourcemod checkout 832519ab647cdecb85763918dbfed1cb5e79c6cb
+          git -C deps/sourcemod submodule update --init --recursive
+
+          git clone https://github.com/alliedmodders/metamod-source.git deps/metamod-source
+          git -C deps/metamod-source checkout 9fed12f652af6a1b03d285d13abbd55726099d1e
+          git -C deps/metamod-source submodule update --init --recursive
+
+          New-Item -ItemType Directory -Force deps/hl2sdk | Out-Null
+          git clone --branch episode1 --single-branch https://github.com/alliedmodders/hl2sdk.git deps/hl2sdk/hl2sdk-episode1
+
+          git clone https://github.com/alliedmodders/ambuild.git deps/ambuild
+          python -m pip install --upgrade pip
+          python -m pip install ./deps/ambuild
+
+      - name: Adapt SendProxy 1.3 for CSS v34 Episode One
+        shell: pwsh
+        run: |
+          $extFile = "deps/sendproxy/extension/extension.cpp"
+          $extText = Get-Content $extFile -Raw
+
+          # SM1.11/modern headers no longer pull this in transitively.
+          if (-not $extText.Contains('#include "tier0/threadtools.h"')) {
+            $extText = $extText.Replace(
+              '#include "extension.h"',
+              "#include `"extension.h`"`r`n#include `"tier0/threadtools.h`""
+            )
+          }
+
+          # EP1 + the SM1.11 public extension glue does not expose this old global.
+          if ($extText -notmatch '(?m)^\s*ICvar\s*\*\s*g_pCVar\s*=') {
+            $oldIface = 'IServerGameClients * gameclients = nullptr;'
+            if (-not $extText.Contains($oldIface)) {
+              throw "Could not find gameclients global"
+            }
+            $extText = $extText.Replace(
+              $oldIface,
+              "$oldIface`r`nICvar * g_pCVar = nullptr;"
+            )
+          }
+
+          # These OrangeBox-era parallel snapshot cvars do not exist in the supplied
+          # CSS v34/EP1 build 4044 engine.dll. Do not make extension load depend on them.
+          $parallelPattern = '(?ms)\s*GET_CONVAR\(sv_parallel_packentities\);\s*sv_parallel_packentities->SetValue\(0\);[^\r\n]*\r?\n\s*GET_CONVAR\(sv_parallel_sendsnapshot\);\s*sv_parallel_sendsnapshot->SetValue\(0\);[^\r\n]*'
+          if ($extText -notmatch $parallelPattern) {
+            throw "Could not find parallel snapshot cvar block"
+          }
+          $parallelReplacement = @'
+
+          #if SOURCE_ENGINE != SE_EPISODEONE
+              GET_CONVAR(sv_parallel_packentities);
+              sv_parallel_packentities->SetValue(0);
+              GET_CONVAR(sv_parallel_sendsnapshot);
+              sv_parallel_sendsnapshot->SetValue(0);
+          #endif
+          '@
+          $extText = [regex]::Replace($extText, $parallelPattern, $parallelReplacement)
+
+          Set-Content -Path $extFile -Value $extText -Encoding UTF8
+
+          # Exact signatures recovered from the user-supplied CSS v34 build-4044 engine.dll.
+          $gd = @'
+          "Games"
+          {
+              "cstrike"
+              {
+                  "Signatures"
+                  {
+                      "CGameClient::ShouldSendMessages"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x83\xEC\x08\x56\x8B\xF1\x80\xBE\xAC\x00\x00\x00\x00\x74\x5A"
+                      }
+
+                      "CGameServer::SendClientMessages"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x64\x89\x25\x00\x00\x00\x00\x51\x53\x57\x6A\x04\x33\xFF"
+                      }
+
+                      "SV_ComputeClientPacks"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x64\x89\x25\x00\x00\x00\x00\x83\xEC\x0C\x53\x55\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A\x89\x7C\x24\x18\x8B\x07\x8B\xCF\xFF\x50\x60\x33\xF6\x89\x74\x24\x24"
+                      }
+                  }
+              }
+          }
+          '@
+          Set-Content -Path "deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt" -Value $gd -Encoding ASCII
+
+          Write-Host "Patched extension markers:"
+          Select-String -Path $extFile -Pattern "threadtools|g_pCVar|SE_EPISODEONE"
+          Write-Host "Gamedata:"
+          Get-Content "deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt"
+
+      - name: Configure and build Episode One target
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps/sendproxy/extension/build | Out-Null
+          Push-Location deps/sendproxy/extension/build
+
+          python ../configure.py `
+            -s episode1 `
+            --hl2sdk-root="$env:GITHUB_WORKSPACE/deps/hl2sdk" `
+            --mms-path="$env:GITHUB_WORKSPACE/deps/metamod-source" `
+            --sm-path="$env:GITHUB_WORKSPACE/deps/sourcemod" `
+            --enable-optimize
+
+          ambuild
+          Pop-Location
+
+      - name: Package DLL and CSS34 gamedata
+        shell: pwsh
+        run: |
+          $dll = Get-ChildItem deps/sendproxy/extension/build -Recurse -File -Filter 'sendproxy.ext.1.ep1.dll' | Select-Object -First 1
+
+          if (-not $dll) {
+            Write-Host 'Build tree:'
+            Get-ChildItem deps/sendproxy/extension/build -Recurse | ForEach-Object { Write-Host $_.FullName }
+            throw 'sendproxy.ext.1.ep1.dll was not produced'
+          }
+
+          New-Item -ItemType Directory -Force artifact/addons/sourcemod/extensions | Out-Null
+          New-Item -ItemType Directory -Force artifact/addons/sourcemod/gamedata | Out-Null
+          Copy-Item $dll.FullName artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll
+          Copy-Item deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt artifact/addons/sourcemod/gamedata/sendproxy.txt
+
+          Get-FileHash artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll -Algorithm SHA256 | Format-List
+
+          $bytes = [System.IO.File]::ReadAllBytes("artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll")
+          if ($bytes[0] -ne 0x4D -or $bytes[1] -ne 0x5A) { throw "Not a PE/MZ file" }
+          $peoff = [BitConverter]::ToInt32($bytes, 0x3C)
+          $machine = [BitConverter]::ToUInt16($bytes, $peoff + 4)
+          if ($machine -ne 0x014C) { throw ("Wrong PE machine: 0x{0:X4}, expected x86 0x014C" -f $machine) }
+          Write-Host "Verified PE machine: x86 (0x014C)"
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: sendproxy13-css34-win32
+          path: artifact/
+          if-no-files-found: error
