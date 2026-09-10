@@ -154,7 +154,7 @@ jobs:
           }
 
           '''
-          marker = '//detours\\n'
+          marker = '//detours'
           if marker not in s:
               raise SystemExit("detours marker not found")
           s = s.replace(marker, origin_detour + marker, 1)
