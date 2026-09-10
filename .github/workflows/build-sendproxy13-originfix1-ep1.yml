@@ -1,0 +1,348 @@
+name: Build SendProxy 1.3 AWH OriginFix1 CSS34 EP1 Windows x86
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-sendproxy13-originfix1-ep1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up MSVC x86
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+
+      - name: Fetch exact dependencies
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps | Out-Null
+          git clone https://github.com/TheByKotik/sendproxy.git deps/sendproxy
+          git -C deps/sendproxy checkout ebf42e67a3e75b413783ab3436d3d1e20635a8f9
+
+          git clone https://github.com/alliedmodders/sourcemod.git deps/sourcemod
+          git -C deps/sourcemod checkout 832519ab647cdecb85763918dbfed1cb5e79c6cb
+          git -C deps/sourcemod submodule update --init --recursive
+
+          git clone https://github.com/alliedmodders/metamod-source.git deps/metamod-source
+          git -C deps/metamod-source checkout 9fed12f652af6a1b03d285d13abbd55726099d1e
+          git -C deps/metamod-source submodule update --init --recursive
+
+          New-Item -ItemType Directory -Force deps/hl2sdk | Out-Null
+          git clone --branch episode1 --single-branch https://github.com/alliedmodders/hl2sdk.git deps/hl2sdk/hl2sdk-episode1
+
+          git clone https://github.com/alliedmodders/ambuild.git deps/ambuild
+          python -m pip install --upgrade pip
+          python -m pip install ./deps/ambuild
+
+      - name: Apply CSS34 m_vecOrigin fix
+        shell: pwsh
+        run: |
+          $patch = @'
+          from pathlib import Path
+          import re
+
+          p = Path("deps/sendproxy/extension/extension.cpp")
+          s = p.read_text(encoding="utf-8")
+
+          if '#include "tier0/threadtools.h"' not in s:
+              s = s.replace('#include "extension.h"',
+                            '#include "extension.h"\n#include "tier0/threadtools.h"', 1)
+
+          if not re.search(r'(?m)^\s*ICvar\s*\*\s*g_pCVar\s*=', s):
+              needle = 'IServerGameClients * gameclients = nullptr;'
+              if needle not in s:
+                  raise SystemExit("gameclients global not found")
+              s = s.replace(needle, needle + '\nICvar * g_pCVar = nullptr;', 1)
+
+          parallel = re.compile(
+              r'\s*GET_CONVAR\(sv_parallel_packentities\);\s*'
+              r'sv_parallel_packentities->SetValue\(0\);[^\r\n]*\r?\n\s*'
+              r'GET_CONVAR\(sv_parallel_sendsnapshot\);\s*'
+              r'sv_parallel_sendsnapshot->SetValue\(0\);[^\r\n]*',
+              re.M | re.S)
+          if not parallel.search(s):
+              raise SystemExit("parallel cvar block not found")
+          s = parallel.sub(
+              '\n#if SOURCE_ENGINE != SE_EPISODEONE\n'
+              '\tGET_CONVAR(sv_parallel_packentities);\n'
+              '\tsv_parallel_packentities->SetValue(0);\n'
+              '\tGET_CONVAR(sv_parallel_sendsnapshot);\n'
+              '\tsv_parallel_sendsnapshot->SetValue(0);\n'
+              '#endif',
+              s, count=1)
+
+          decl = ('DECL_DETOUR(CGameServer_SendClientMessages);\n'
+                  'DECL_DETOUR(CGameClient_ShouldSendMessages);\n'
+                  'DECL_DETOUR(SV_ComputeClientPacks);')
+          if decl not in s:
+              raise SystemExit("detour declaration block not found")
+          s = s.replace(decl, decl + '\nDECL_DETOUR(SendProxy_Origin_AWH);', 1)
+
+          static_decl = ('static CBaseEntity * FindEntityByServerClassname(int, const char *);\n'
+                         'static void CallChangeCallbacks(PropChangeHook * pInfo, void * pOldValue, void * pNewValue);\n'
+                         'static void CallChangeGamerulesCallbacks(PropChangeHookGamerules * pInfo, void * pOldValue, void * pNewValue);')
+          if static_decl not in s:
+              raise SystemExit("static declaration block not found")
+          s = s.replace(
+              static_decl,
+              static_decl + '\n'
+              'bool CallVector(SendPropHook hook, Vector &vec);\n'
+              'bool g_bAWHCallingOriginalOrigin = false;',
+              1)
+
+          origin_detour = r'''
+          DETOUR_DECL_STATIC6(SendProxy_Origin_AWH, void,
+              const SendProp *, pProp,
+              const void *, pStructBase,
+              const void *, pData,
+              DVariant *, pOut,
+              int, iElement,
+              int, objectID)
+          {
+              if (g_bAWHCallingOriginalOrigin)
+              {
+                  return DETOUR_STATIC_CALL(SendProxy_Origin_AWH)(
+                      pProp, pStructBase, pData, pOut, iElement, objectID);
+              }
+
+              if (g_bCurrentGameClientCallFwd && g_iCurrentClientIndexInLoop >= 0)
+              {
+                  edict_t *pEnt = gamehelpers->EdictOfIndex(objectID);
+
+                  for (int i = 0; i < g_Hooks.Count(); i++)
+                  {
+                      if (g_Hooks[i].objectID == objectID &&
+                          g_Hooks[i].pVar == pProp &&
+                          pEnt == g_Hooks[i].pEnt &&
+                          g_Hooks[i].PropType == PropType::Prop_Vector)
+                      {
+                          Vector result = *(Vector *)pData;
+
+                          if (CallVector(g_Hooks[i], result))
+                          {
+                              pOut->m_Vector[0] = result.x;
+                              pOut->m_Vector[1] = result.y;
+                              pOut->m_Vector[2] = result.z;
+                              return;
+                          }
+
+                          break;
+                      }
+                  }
+              }
+
+              return DETOUR_STATIC_CALL(SendProxy_Origin_AWH)(
+                  pProp, pStructBase, pData, pOut, iElement, objectID);
+          }
+
+          '''
+          marker = '//detours\n'
+          if marker not in s:
+              raise SystemExit("detours marker not found")
+          s = s.replace(marker, origin_detour + marker, 1)
+
+          old_guard = '''bool CallVector(SendPropHook hook, Vector &vec)
+          {
+          \tif (!g_bSVComputePacksDone)
+          \t\treturn false;'''
+          new_guard = '''bool CallVector(SendPropHook hook, Vector &vec)
+          {
+          \tif (!g_bSVComputePacksDone)
+          \t{
+          \t\tif (!g_bCurrentGameClientCallFwd || g_iCurrentClientIndexInLoop < 0)
+          \t\t\treturn false;
+          \t}'''
+          if old_guard not in s:
+              raise SystemExit("CallVector guard not found")
+          s = s.replace(old_guard, new_guard, 1)
+
+          old_vec = '''\t\t\t\tcase PropType::Prop_Vector:
+          \t\t\t\t{
+          \t\t\t\t\tVector result = *(Vector *)pData;
+
+          \t\t\t\t\tif (CallVector(g_Hooks[i], result))
+          \t\t\t\t\t{
+          \t\t\t\t\t\tg_Hooks[i].pRealProxy(pProp, pStructBase, &result, pOut, iElement, objectID);
+          \t\t\t\t\t\treturn; // If somebody already handled this call, do not call other hooks for this entity & prop
+          \t\t\t\t\t}
+          \t\t\t\t\telse
+          \t\t\t\t\t{
+          \t\t\t\t\t\tg_Hooks[i].pRealProxy(pProp, pStructBase, pData, pOut, iElement, objectID);
+          \t\t\t\t\t}
+          \t\t\t\t\tbHandled = true;
+          \t\t\t\t\tcontinue;
+          \t\t\t\t}'''
+          new_vec = '''\t\t\t\tcase PropType::Prop_Vector:
+          \t\t\t\t{
+          \t\t\t\t\tVector result = *(Vector *)pData;
+          \t\t\t\t\tbool isOrigin = (strcmp(pProp->GetName(), "m_vecOrigin") == 0);
+
+          \t\t\t\t\tif (CallVector(g_Hooks[i], result))
+          \t\t\t\t\t{
+          \t\t\t\t\t\tif (isOrigin)
+          \t\t\t\t\t\t{
+          \t\t\t\t\t\t\tpOut->m_Vector[0] = result.x;
+          \t\t\t\t\t\t\tpOut->m_Vector[1] = result.y;
+          \t\t\t\t\t\t\tpOut->m_Vector[2] = result.z;
+          \t\t\t\t\t\t\treturn;
+          \t\t\t\t\t\t}
+
+          \t\t\t\t\t\tg_Hooks[i].pRealProxy(pProp, pStructBase, &result, pOut, iElement, objectID);
+          \t\t\t\t\t\treturn;
+          \t\t\t\t\t}
+          \t\t\t\t\telse
+          \t\t\t\t\t{
+          \t\t\t\t\t\tif (isOrigin)
+          \t\t\t\t\t\t\tg_bAWHCallingOriginalOrigin = true;
+
+          \t\t\t\t\t\tg_Hooks[i].pRealProxy(pProp, pStructBase, pData, pOut, iElement, objectID);
+
+          \t\t\t\t\t\tif (isOrigin)
+          \t\t\t\t\t\t\tg_bAWHCallingOriginalOrigin = false;
+          \t\t\t\t\t}
+
+          \t\t\t\t\tbHandled = true;
+          \t\t\t\t\tcontinue;
+          \t\t\t\t}'''
+          if old_vec not in s:
+              raise SystemExit("GlobalProxy vector block not found")
+          s = s.replace(old_vec, new_vec, 1)
+
+          create = ('\tCREATE_DETOUR(CGameServer_SendClientMessages, "CGameServer::SendClientMessages", bDetoursInited);\n'
+                    '\tCREATE_DETOUR(CGameClient_ShouldSendMessages, "CGameClient::ShouldSendMessages", bDetoursInited);\n'
+                    '\tCREATE_DETOUR_STATIC(SV_ComputeClientPacks, "SV_ComputeClientPacks", bDetoursInited);')
+          if create not in s:
+              raise SystemExit("detour creation block not found")
+          s = s.replace(
+              create,
+              create + '\n'
+              '\tbool bOriginDetourInited = false;\n'
+              '\tCREATE_DETOUR_STATIC(SendProxy_Origin_AWH, "SendProxy_Origin", bOriginDetourInited);',
+              1)
+
+          check = '''\tif (!bDetoursInited)
+          \t{
+          \t\tsnprintf(error, maxlength, "Could not create detours, see error log!");
+          \t\treturn false;
+          \t}'''
+          new_check = '''\tif (!bDetoursInited || !bOriginDetourInited)
+          \t{
+          \t\tsnprintf(error, maxlength, "Could not create required CSS34 detours, see error log!");
+          \t\treturn false;
+          \t}'''
+          if check not in s:
+              raise SystemExit("detour validation block not found")
+          s = s.replace(check, new_check, 1)
+
+          destroy = '''\tDESTROY_DETOUR(CGameServer_SendClientMessages);
+          \tDESTROY_DETOUR(CGameClient_ShouldSendMessages);
+          \tDESTROY_DETOUR(SV_ComputeClientPacks);'''
+          if destroy not in s:
+              raise SystemExit("detour destruction block not found")
+          s = s.replace(destroy, destroy + '\n\tDESTROY_DETOUR(SendProxy_Origin_AWH);', 1)
+
+          p.write_text(s, encoding="utf-8", newline="\n")
+
+          cfg = Path("deps/sendproxy/extension/smsdk_config.h")
+          t = cfg.read_text(encoding="utf-8")
+          t = t.replace('#define SMEXT_CONF_VERSION\t\t\t"1.3.3"',
+                        '#define SMEXT_CONF_VERSION\t\t\t"1.3.3-css34-originfix1"')
+          cfg.write_text(t, encoding="utf-8", newline="\n")
+          '@
+          Set-Content -Path patch_sendproxy.py -Value $patch -Encoding UTF8
+          python patch_sendproxy.py
+
+          $gd = @'
+          "Games"
+          {
+              "cstrike"
+              {
+                  "Signatures"
+                  {
+                      "CGameClient::ShouldSendMessages"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x83\xEC\x08\x56\x8B\xF1\x80\xBE\xAC\x00\x00\x00\x00\x74\x5A"
+                      }
+
+                      "CGameServer::SendClientMessages"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x64\x89\x25\x00\x00\x00\x00\x81\xEC\x00\x04\x00\x00\x53\x55\x57\x6A\x04\x33\xDB"
+                      }
+
+                      "SV_ComputeClientPacks"
+                      {
+                          "library"   "engine"
+                          "windows"   "\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x64\x89\x25\x00\x00\x00\x00\x83\xEC\x0C\x53\x55\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A\x89\x7C\x24\x18\x8B\x07\x8B\xCF\xFF\x50\x60\x33\xF6\x89\x74\x24\x24"
+                      }
+
+                      "SendProxy_Origin"
+                      {
+                          "library"   "server"
+                          "windows"   "\x80\x3D\x2A\x2A\x2A\x2A\x00\x53\x56\x8B\x74\x24\x10\x8D\x9E\x1C\x03\x00\x00\x74\x39\x85\xF6\x74\x35\x80\xBE\xDE\x00\x00\x00\x03\x75\x2C"
+                      }
+                  }
+              }
+          }
+          '@
+          Set-Content -Path "deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt" -Value $gd -Encoding ASCII
+
+          Write-Host "OriginFix markers:"
+          Select-String -Path "deps/sendproxy/extension/extension.cpp" -Pattern "SendProxy_Origin_AWH|g_bAWHCallingOriginalOrigin|isOrigin"
+          Get-Content "deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt"
+
+      - name: Configure and build Episode One target
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force deps/sendproxy/extension/build | Out-Null
+          Push-Location deps/sendproxy/extension/build
+
+          python ../configure.py `
+            -s episode1 `
+            --hl2sdk-root="$env:GITHUB_WORKSPACE/deps/hl2sdk" `
+            --mms-path="$env:GITHUB_WORKSPACE/deps/metamod-source" `
+            --sm-path="$env:GITHUB_WORKSPACE/deps/sourcemod" `
+            --enable-optimize
+
+          ambuild
+          Pop-Location
+
+      - name: Package DLL and gamedata
+        shell: pwsh
+        run: |
+          $dll = Get-ChildItem deps/sendproxy/extension/build -Recurse -File -Filter 'sendproxy.ext.1.ep1.dll' | Select-Object -First 1
+          if (-not $dll) { throw 'sendproxy.ext.1.ep1.dll was not produced' }
+
+          New-Item -ItemType Directory -Force artifact/addons/sourcemod/extensions | Out-Null
+          New-Item -ItemType Directory -Force artifact/addons/sourcemod/gamedata | Out-Null
+          Copy-Item $dll.FullName artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll
+          Copy-Item deps/sendproxy/addons/sourcemod/gamedata/sendproxy.txt artifact/addons/sourcemod/gamedata/sendproxy.txt
+
+          Get-FileHash artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll -Algorithm SHA256 | Format-List
+
+          $bytes = [System.IO.File]::ReadAllBytes("artifact/addons/sourcemod/extensions/sendproxy.ext.1.ep1.dll")
+          if ($bytes[0] -ne 0x4D -or $bytes[1] -ne 0x5A) { throw "Not a PE/MZ file" }
+          $peoff = [BitConverter]::ToInt32($bytes, 0x3C)
+          $machine = [BitConverter]::ToUInt16($bytes, $peoff + 4)
+          if ($machine -ne 0x014C) { throw ("Wrong PE machine: 0x{0:X4}" -f $machine) }
+          Write-Host "Verified PE x86"
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: sendproxy13-css34-originfix1-win32
+          path: artifact/
+          if-no-files-found: error
